@@ -516,93 +516,145 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
   </div>
 
   <!-- Dashboard mockup -->
-  <div class="mockup-wrap rv">
-    <div class="mock-topbar">
-      <div class="mock-dots">
-        <div class="mock-dot" style="background:#ff5f57"></div>
-        <div class="mock-dot" style="background:#febc2e"></div>
-        <div class="mock-dot" style="background:#28c840"></div>
-      </div>
-      <div class="mock-urlbar">vertomediaglobal.com — Campaign Analytics</div>
+ <div class="mockup-wrap rv">
+  <div class="mock-topbar">
+    <div class="mock-dots">
+      <div class="mock-dot" style="background:#ff5f57"></div>
+      <div class="mock-dot" style="background:#febc2e"></div>
+      <div class="mock-dot" style="background:#28c840"></div>
     </div>
-    <div class="mock-body">
-      <div class="mock-sidebar">
-        <div class="mock-logo">
-          <div class="mock-logo-dot">V</div>
-          <div class="mock-logo-txt">Verto</div>
-        </div>
-        <div class="mock-nav-item active"><div class="mock-nav-dot" style="background:var(--p)"></div><span data-en="Overview" data-es="Vista general">Overview</span></div>
-        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Campaigns" data-es="Campañas">Campaigns</span></div>
-        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Analytics" data-es="Analítica">Analytics</span></div>
-        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span>SEO</span></div>
-        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Reports" data-es="Informes">Reports</span></div>
+    <div class="mock-urlbar">vertomediaglobal.com — Campaign Analytics</div>
+  </div>
+  <div class="mock-body">
+    <div class="mock-sidebar">
+      <div class="mock-logo">
+        <div class="mock-logo-dot">V</div>
+        <div class="mock-logo-txt">Verto</div>
       </div>
-      <div class="mock-main">
-        <div class="mock-header">
-          <div>
-            <div class="mock-title" data-en="Welcome Back, Verto 👋" data-es="Bienvenido, Verto 👋">Welcome Back, Verto 👋</div>
-            <div class="mock-sub" data-en="Here is your campaign performance overview" data-es="Aquí está el resumen de rendimiento">Here is your campaign performance overview</div>
+      <div class="mock-nav-item active"><div class="mock-nav-dot" style="background:var(--p)"></div><span data-en="Overview" data-es="Vista general">Overview</span></div>
+      <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Campaigns" data-es="Campañas">Campaigns</span></div>
+      <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Analytics" data-es="Analítica">Analytics</span></div>
+      <div class="mock-nav-item"><div class="mock-nav-dot"></div><span>SEO</span></div>
+      <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Reports" data-es="Informes">Reports</span></div>
+    </div>
+    <div class="mock-main">
+      <div class="mock-header">
+        <div>
+          <div class="mock-title" data-en="Welcome Back, Verto 👋" data-es="Bienvenido, Verto 👋">Welcome Back, Verto 👋</div>
+          <div class="mock-sub" data-en="Here is your campaign performance overview" data-es="Aquí está el resumen de rendimiento">Here is your campaign performance overview</div>
+        </div>
+      </div>
+      <div class="mock-stats">
+        <div class="mock-stat">
+          <span class="mock-stat-v" id="ms1">+0%</span>
+          <span class="mock-stat-l" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</span>
+          <span class="mock-stat-g">↑ 23% this month</span>
+        </div>
+        <div class="mock-stat">
+          <span class="mock-stat-v" id="ms2">+0%</span>
+          <span class="mock-stat-l" data-en="Avg. ROI" data-es="ROI Promedio">Avg. ROI</span>
+          <span class="mock-stat-g">↑ 41% this quarter</span>
+        </div>
+        <div class="mock-stat">
+          <span class="mock-stat-v" id="ms3">0</span>
+          <span class="mock-stat-l" data-en="Qualified Leads" data-es="Leads">Qualified Leads</span>
+          <span class="mock-stat-g">↑ 18% new leads</span>
+        </div>
+        <div class="mock-stat">
+          <span class="mock-stat-v">24h</span>
+          <span class="mock-stat-l" data-en="Response Time" data-es="Respuesta">Response Time</span>
+          <span class="mock-stat-g" style="color:var(--p)">● Always on</span>
+        </div>
+      </div>
+      <div class="mock-charts">
+        <div class="mock-chart-box">
+          <div class="mock-chart-title">
+            <span data-en="Campaign Performance Analytics" data-es="Analítica de Campañas">Campaign Performance Analytics</span>
+            <div class="mock-chart-legend">
+              <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--p)"></div><span class="mock-legend-txt">Organic</span></div>
+              <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--cyan)"></div><span class="mock-legend-txt">Paid</span></div>
+            </div>
+          </div>
+          <div class="mock-bars-wrap" id="mock-bars-live">
+            <div class="mbar" id="mb1" style="background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div class="mbar" id="mb2" style="background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div class="mbar" id="mb3" style="background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div class="mbar" id="mb4" style="background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div class="mbar" id="mb5" style="background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div class="mbar" id="mb6" style="background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2))"></div>
+            <div class="mbar" id="mb7" style="background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2))"></div>
           </div>
         </div>
-        <div class="mock-stats">
-          <div class="mock-stat">
-            <span class="mock-stat-v">+125%</span>
-            <span class="mock-stat-l" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</span>
-            <span class="mock-stat-g">↑ 23% this month</span>
-          </div>
-          <div class="mock-stat">
-            <span class="mock-stat-v">+487%</span>
-            <span class="mock-stat-l" data-en="Avg. ROI" data-es="ROI Promedio">Avg. ROI</span>
-            <span class="mock-stat-g">↑ 41% this quarter</span>
-          </div>
-          <div class="mock-stat">
-            <span class="mock-stat-v">350+</span>
-            <span class="mock-stat-l" data-en="Qualified Leads" data-es="Leads">Qualified Leads</span>
-            <span class="mock-stat-g">↑ 18% new leads</span>
-          </div>
-          <div class="mock-stat">
-            <span class="mock-stat-v">24h</span>
-            <span class="mock-stat-l" data-en="Response Time" data-es="Respuesta">Response Time</span>
-            <span class="mock-stat-g" style="color:var(--p)">● Always on</span>
-          </div>
-        </div>
-        <div class="mock-charts">
-          <div class="mock-chart-box">
-            <div class="mock-chart-title">
-              <span data-en="Campaign Performance Analytics" data-es="Analítica de Campañas">Campaign Performance Analytics</span>
-              <div class="mock-chart-legend">
-                <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--p)"></div><span class="mock-legend-txt">Organic</span></div>
-                <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--cyan)"></div><span class="mock-legend-txt">Paid</span></div>
-              </div>
-            </div>
-            <div class="mock-bars-wrap">
-              <div class="mbar" style="height:38%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab1 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:60%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab2 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:45%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab3 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:75%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab4 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:55%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab5 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:88%;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2));animation:ab6 3s ease-in-out infinite"></div>
-              <div class="mbar" style="height:100%;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2));animation:ab7 3s ease-in-out infinite"></div>
-            </div>
-          </div>
-          <div class="mock-donut-box">
-            <div class="mock-donut-title" data-en="Channels" data-es="Canales">Channels</div>
-            <svg width="80" height="80" viewBox="0 0 80 80">
-              <circle cx="40" cy="40" r="28" fill="none" stroke="#e2e8f0" stroke-width="12"/>
-              <circle cx="40" cy="40" r="28" fill="none" stroke="#4f46e5" stroke-width="12" stroke-dasharray="70 106" stroke-dashoffset="0" stroke-linecap="round"/>
-              <circle cx="40" cy="40" r="28" fill="none" stroke="#06b6d4" stroke-width="12" stroke-dasharray="45 131" stroke-dashoffset="-70" stroke-linecap="round"/>
-              <circle cx="40" cy="40" r="28" fill="none" stroke="#ec4899" stroke-width="12" stroke-dasharray="28 148" stroke-dashoffset="-115" stroke-linecap="round"/>
-            </svg>
-            <div class="donut-legend">
-              <div class="donut-row"><div class="donut-sq" style="background:#4f46e5"></div>SEO 40%</div>
-              <div class="donut-row"><div class="donut-sq" style="background:#06b6d4"></div>Paid 26%</div>
-              <div class="donut-row"><div class="donut-sq" style="background:#ec4899"></div>Social 16%</div>
-            </div>
+        <div class="mock-donut-box">
+          <div class="mock-donut-title" data-en="Channels" data-es="Canales">Channels</div>
+          <svg width="80" height="80" viewBox="0 0 80 80" id="donut-svg" style="transform:rotate(-90deg)">
+            <circle cx="40" cy="40" r="28" fill="none" stroke="#e2e8f0" stroke-width="12"/>
+            <circle id="dc1" cx="40" cy="40" r="28" fill="none" stroke="#4f46e5" stroke-width="12" stroke-dasharray="0 176" stroke-linecap="round"/>
+            <circle id="dc2" cx="40" cy="40" r="28" fill="none" stroke="#06b6d4" stroke-width="12" stroke-dasharray="0 176" stroke-linecap="round"/>
+            <circle id="dc3" cx="40" cy="40" r="28" fill="none" stroke="#ec4899" stroke-width="12" stroke-dasharray="0 176" stroke-linecap="round"/>
+          </svg>
+          <div class="donut-legend">
+            <div class="donut-row"><div class="donut-sq" style="background:#4f46e5"></div>SEO 40%</div>
+            <div class="donut-row"><div class="donut-sq" style="background:#06b6d4"></div>Paid 26%</div>
+            <div class="donut-row"><div class="donut-sq" style="background:#ec4899"></div>Social 16%</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<script>
+(function(){
+  /* Animated bars */
+  const tgts=[38,60,45,75,55,88,100];
+  const cur=[0,0,0,0,0,0,0];
+  const bs=tgts.map((_,i)=>document.getElementById('mb'+(i+1)));
+  function animBars(){
+    cur.forEach((c,i)=>{cur[i]+=((tgts[i]||0)-c)*.08;if(bs[i])bs[i].style.height=Math.round(cur[i])+'%';});
+    requestAnimationFrame(animBars);
+  }
+  animBars();
+  setInterval(()=>{tgts.forEach((_,i)=>{tgts[i]=Math.round(25+Math.random()*75);});tgts[6]=100;},2500);
+
+  /* Animated donut */
+  const circ=2*Math.PI*28;
+  const segs=[{el:'dc1',pct:.40,offset:0},{el:'dc2',pct:.26,offset:.40},{el:'dc3',pct:.16,offset:.66}];
+  let dt=0;
+  function animDonut(){
+    dt+=.015;
+    segs.forEach(s=>{
+      const el=document.getElementById(s.el);
+      if(!el)return;
+      const pulse=1+Math.sin(dt+s.offset*10)*.04;
+      const dash=s.pct*circ*pulse;
+      const gap=circ-dash;
+      const off=-(s.offset*circ);
+      el.setAttribute('stroke-dasharray',dash.toFixed(1)+' '+gap.toFixed(1));
+      el.setAttribute('stroke-dashoffset',off.toFixed(1));
+    });
+    requestAnimationFrame(animDonut);
+  }
+  animDonut();
+
+  /* Counters */
+  function ctr(el,t,sfx){
+    const d=1600,s=performance.now();
+    const r=n=>{const p=Math.min((n-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent=(sfx?'+':'')+Math.round(e*t)+(sfx||'');if(p<1)requestAnimationFrame(r);};
+    requestAnimationFrame(r);
+  }
+  const o=new IntersectionObserver(en=>{
+    en.forEach(e=>{if(e.isIntersecting){
+      ctr(document.getElementById('ms1'),125,'%');
+      ctr(document.getElementById('ms2'),487,'%');
+      ctr(document.getElementById('ms3'),350,'+');
+      o.disconnect();
+    }});
+  },{threshold:.3});
+  const ms1=document.getElementById('ms1');
+  if(ms1)o.observe(ms1);
+})();
+</script>
 </section>
 
 <!-- TRUSTED BY -->
@@ -622,36 +674,60 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 
 <!-- ABOUT -->
 <section class="sec bg" id="about">
-  <div class="ct">
-    <div class="ag">
-      <div class="avis rvl">
-        <div class="avis-glow"></div>
-        <div class="avis-glow2"></div>
-        <div class="avis-bg-txt">VMG</div>
-        <div class="avis-cards">
-          <div class="avis-card">
-            <span class="avis-card-v">+125%</span>
-            <span class="avis-card-l" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</span>
-            <span class="avis-card-g">↑ 23% this month</span>
-          </div>
-          <div class="avis-card">
-            <span class="avis-card-v">+487%</span>
-            <span class="avis-card-l" data-en="Average ROI" data-es="ROI Promedio">Average ROI</span>
-            <span class="avis-card-g">↑ 41% this quarter</span>
-          </div>
-          <div class="avis-bar-card">
-            <div class="avis-bar-header">
-              <span class="avis-bar-t" data-en="Campaign Performance" data-es="Rendimiento">Campaign Performance</span>
-              <div class="live-badge"><div class="live-dot"></div>LIVE</div>
-            </div>
-            <div class="abars">
-              <div class="ab"></div><div class="ab"></div><div class="ab"></div>
-              <div class="ab"></div><div class="ab"></div><div class="ab"></div>
-              <div class="ab"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+ <div class="avis rvl" style="padding:28px;min-height:380px;background:var(--bg2);border:1.5px solid var(--border);border-radius:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 20px rgba(15,23,42,.06)">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:18px">
+      <div style="font-size:26px;font-weight:800;color:var(--dark)" id="av1">+0%</div>
+      <div style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Traffic Growth</div>
+      <div style="font-size:11px;color:var(--green);margin-top:5px;font-weight:600">↑ 23% this month</div>
+    </div>
+    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:18px">
+      <div style="font-size:26px;font-weight:800;color:var(--dark)" id="av2">+0%</div>
+      <div style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Average ROI</div>
+      <div style="font-size:11px;color:var(--green);margin-top:5px;font-weight:600">↑ 41% this quarter</div>
+    </div>
+  </div>
+  <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:16px;flex:1">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <span style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em">Campaign Performance</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:var(--green)"><span id="av-live" style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block"></span>LIVE</span>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:5px;height:64px" id="av-bars">
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb1"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb2"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb3"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb4"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb5"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(6,182,212,.3))" id="avb6"></div>
+      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(6,182,212,.3))" id="avb7"></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:9px">
+      <span style="font-size:18px">🌍</span>
+      <div><div style="font-size:12px;font-weight:700;color:var(--dark)">6 Languages</div><div style="font-size:10px;color:var(--text2)">EN ES FR DE IT AR</div></div>
+    </div>
+    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:9px">
+      <span style="font-size:18px">⚡</span>
+      <div><div style="font-size:12px;font-weight:700;color:var(--dark)">350+ Leads</div><div style="font-size:10px;color:var(--text2)">Qualified monthly</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const tgts=[42,64,50,78,58,88,100];
+  const cur=[0,0,0,0,0,0,0];
+  const bs=tgts.map((_,i)=>document.getElementById('avb'+(i+1)));
+  function animB(){cur.forEach((c,i)=>{const d=tgts[i]-c;cur[i]+=d*.08;if(bs[i])bs[i].style.height=Math.round(cur[i])+'%';});requestAnimationFrame(animB);}
+  animB();
+  setInterval(()=>{tgts.forEach((_,i)=>{tgts[i]=Math.round(30+Math.random()*70);});tgts[6]=100;},2800);
+  function ctr(el,t){const d=1400,s=performance.now();const r=n=>{const p=Math.min((n-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent='+'+Math.round(e*t)+'%';if(p<1)requestAnimationFrame(r);};requestAnimationFrame(r);}
+  const o=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){ctr(document.getElementById('av1'),125);ctr(document.getElementById('av2'),487);o.disconnect();}});},{threshold:.3});
+  o.observe(document.getElementById('av1'));
+  let on=true;setInterval(()=>{const d=document.getElementById('av-live');if(d){d.style.opacity=on?'.2':'1';on=!on;}},800);
+})();
+</script>
       <div class="rvr">
         <div class="sh">
           <span class="stag" data-en="About Us" data-es="Nosotros">About Us</span>
