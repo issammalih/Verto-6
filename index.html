@@ -851,131 +851,119 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 <!-- HOW TO GROW -->
 <section class="sec bg" id="process">
   <div class="ct">
-    <div style="text-align:center;margin-bottom:52px" class="rv">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
       <span class="stag" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
-      <h2 class="sh" style="margin-bottom:0" data-en="How to <em>grow with us</em>" data-es="Cómo <em>crecer con nosotros</em>">How to <em>grow with us</em></h2>
+      <h2 style="font-size:clamp(26px,3.5vw,44px);font-weight:800;letter-spacing:-.02em;color:var(--dark)" data-en="How to <em style='font-style:normal;color:var(--p)'>grow with us</em>" data-es="Cómo <em style='font-style:normal;color:var(--p)'>crecer con nosotros</em>">How to <em style="font-style:normal;color:var(--p)">grow with us</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
-      <!-- Steps left -->
-      <div>
-        <div class="gsteps">
-          <div class="gstep rv d1"><div class="gnum">1</div><div><div class="gstep-t" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div><div class="gstep-p" data-en="Brand audit, objectives, and tailored strategic action plan." data-es="Auditoría de marca, objetivos y plan estratégico.">Brand audit, objectives, and tailored strategic action plan.</div></div></div>
-          <div class="gstep rv d2"><div class="gnum">2</div><div><div class="gstep-t" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div><div class="gstep-p" data-en="Visuals, copywriting, and SEO content production." data-es="Visuales, redacción y producción de contenido SEO.">Visuals, copywriting, and SEO content production.</div></div></div>
-          <div class="gstep rv d3"><div class="gnum">3</div><div><div class="gstep-t" data-en="Activation" data-es="Activación">Activation</div><div class="gstep-p" data-en="Publication, newsletters, and full ad campaign launch." data-es="Publicación, newsletters y lanzamiento de campañas.">Publication, newsletters, and full ad campaign launch.</div></div></div>
-          <div class="gstep rv d4"><div class="gnum">4</div><div><div class="gstep-t" data-en="Monitoring & Optimization" data-es="Monitoreo y Optimización">Monitoring & Optimization</div><div class="gstep-p" data-en="KPI tracking, A/B testing, and monthly performance reports." data-es="Seguimiento de KPI, pruebas A/B e informes mensuales.">KPI tracking, A/B testing, and monthly performance reports.</div></div></div>
-          <div class="gstep rv d5"><div class="gnum">5</div><div><div class="gstep-t" data-en="Results Delivered" data-es="Resultados Entregados">Results Delivered</div><div class="gstep-p" data-en="Conversions, qualified leads, and measurable growth." data-es="Conversiones, leads calificados y crecimiento medible.">Conversions, qualified leads, and measurable growth.</div></div></div>
-        </div>
+
+    <!-- STEPS: Cards grid (shows on all screens) -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:48px" class="proc-steps-grid rv">
+      <div style="background:var(--w);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(79,70,229,.04)">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(79,70,229,.3)">1</div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.5" data-en="Brand audit & strategic plan." data-es="Auditoría de marca y plan.">Brand audit & strategic plan.</div>
       </div>
-      <!-- Visual right: Orbit animation -->
-      <div class="rvr" style="position:relative;height:420px;display:flex;align-items:center;justify-content:center">
-        <canvas id="orbit-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
-        <!-- Center badge -->
-        <div style="position:relative;z-index:2;text-align:center;background:rgba(255,255,255,.95);border:1.5px solid rgba(79,70,229,.2);border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(79,70,229,.18);animation:cpulse 3s ease-in-out infinite">
-          <div style="font-size:28px;font-weight:800;color:#4f46e5;line-height:1">5</div>
-          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Steps</div>
+      <div style="background:var(--w);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(79,70,229,.04)">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(79,70,229,.3)">2</div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.5" data-en="Visuals, copy & SEO content." data-es="Visuales, redacción y SEO.">Visuals, copy & SEO content.</div>
+      </div>
+      <div style="background:var(--w);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(79,70,229,.04)">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(79,70,229,.3)">3</div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px" data-en="Activation" data-es="Activación">Activation</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.5" data-en="Launch campaigns & newsletters." data-es="Lanzamiento de campañas.">Launch campaigns & newsletters.</div>
+      </div>
+      <div style="background:var(--w);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(79,70,229,.04)">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(79,70,229,.3)">4</div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px" data-en="Monitoring" data-es="Monitoreo">Monitoring</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.5" data-en="KPI tracking & A/B testing." data-es="KPI y pruebas A/B.">KPI tracking & A/B testing.</div>
+      </div>
+      <div style="background:var(--w);border:1.5px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(79,70,229,.04)">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#10b981,#06b6d4);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(16,185,129,.3)">5</div>
+        <div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px" data-en="Results Delivered" data-es="Resultados Entregados">Results Delivered</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.5" data-en="Conversions & measurable growth." data-es="Conversiones y crecimiento.">Conversions & measurable growth.</div>
+      </div>
+    </div>
+
+    <!-- VISUAL: Orbit (desktop) / Stats cards (mobile) -->
+    <div style="position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#eef2ff,#e0e7ff,#dbeafe);min-height:340px;display:flex;align-items:center;justify-content:center" class="rv">
+      <!-- Desktop orbit canvas -->
+      <canvas id="orbit-cv2" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+
+      <!-- Stats cards overlay -->
+      <div style="position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:40px;width:100%" class="proc-stats-grid">
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.12);border-radius:16px;padding:20px;text-align:center;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:afl1 4s ease-in-out infinite">
+          <div style="font-size:28px;font-weight:800;color:#4f46e5;line-height:1">+125%</div>
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600;margin-top:4px">↑ 23% this month</div>
         </div>
-        <!-- Orbit labels -->
-        <div id="orb-labels" style="position:absolute;inset:0;z-index:2"></div>
-        <style>
-          @keyframes cpulse{0%,100%{box-shadow:0 12px 40px rgba(79,70,229,.18),0 0 0 0 rgba(79,70,229,.15)}50%{box-shadow:0 12px 40px rgba(79,70,229,.25),0 0 0 16px rgba(79,70,229,.04)}}
-        </style>
-        <script>
-        (function(){
-          const cv=document.getElementById('orbit-cv');
-          if(!cv)return;
-          const cx=cv.getContext('2d');
-          let W,H,t=0;
-          function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
-          rz();
-
-          const steps=[
-            {label:'Strategy',icon:'🎯',color:'#4f46e5'},
-            {label:'Content',icon:'🎨',color:'#06b6d4'},
-            {label:'Activation',icon:'🚀',color:'#10b981'},
-            {label:'Monitoring',icon:'📊',color:'#f59e0b'},
-            {label:'Results',icon:'🏆',color:'#ec4899'},
-          ];
-
-          const lblContainer=document.getElementById('orb-labels');
-          const lblEls=steps.map((s,i)=>{
-            const d=document.createElement('div');
-            d.style.cssText='position:absolute;background:rgba(255,255,255,.95);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:8px 12px;text-align:center;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:transform .1s';
-            d.innerHTML=`<div style="font-size:16px">${s.icon}</div><div style="font-size:10px;font-weight:700;color:${s.color};margin-top:2px">${s.label}</div>`;
-            lblContainer.appendChild(d);
-            return d;
-          });
-
-          function frame(){
-            rz();t+=.008;
-            cx.clearRect(0,0,W,H);
-            const cx2=W/2,cy2=H/2;
-            const r1=Math.min(W,H)*.32;
-            const r2=Math.min(W,H)*.2;
-
-            /* Draw orbit rings */
-            cx.beginPath();cx.arc(cx2,cy2,r1,0,Math.PI*2);
-            cx.strokeStyle='rgba(79,70,229,.1)';cx.lineWidth=1;cx.setLineDash([6,8]);cx.stroke();cx.setLineDash([]);
-            cx.beginPath();cx.arc(cx2,cy2,r2,0,Math.PI*2);
-            cx.strokeStyle='rgba(6,182,212,.08)';cx.lineWidth=1;cx.setLineDash([4,10]);cx.stroke();cx.setLineDash([]);
-
-            /* Orbiting dots trail */
-            for(let i=0;i<steps.length;i++){
-              const angle=t+(i/steps.length)*Math.PI*2;
-              const x=cx2+Math.cos(angle)*r1;
-              const y=cy2+Math.sin(angle)*r1;
-
-              /* trail */
-              for(let j=1;j<=8;j++){
-                const ta=angle-(j*.06);
-                const tx=cx2+Math.cos(ta)*r1;
-                const ty=cy2+Math.sin(ta)*r1;
-                cx.beginPath();cx.arc(tx,ty,3*(1-j/8),0,Math.PI*2);
-                cx.fillStyle=`rgba(79,70,229,${.15*(1-j/8)})`;cx.fill();
-              }
-
-              /* main dot */
-              cx.beginPath();cx.arc(x,y,7,0,Math.PI*2);
-              cx.fillStyle=steps[i].color;cx.fill();
-              cx.beginPath();cx.arc(x,y,11,0,Math.PI*2);
-              cx.fillStyle=steps[i].color.replace(')',',0.15)').replace('rgb','rgba');cx.fill();
-
-              /* position label */
-              const lx=cx2+Math.cos(angle)*r1*1.55;
-              const ly=cy2+Math.sin(angle)*r1*1.55;
-              const el=lblEls[i];
-              const ew=el.offsetWidth||80,eh=el.offsetHeight||48;
-              el.style.left=(lx-ew/2)+'px';
-              el.style.top=(ly-eh/2)+'px';
-            }
-
-            /* Inner counter-orbit */
-            for(let i=0;i<3;i++){
-              const angle=-t*1.5+(i/3)*Math.PI*2;
-              const x=cx2+Math.cos(angle)*r2;
-              const y=cy2+Math.sin(angle)*r2;
-              cx.beginPath();cx.arc(x,y,4,0,Math.PI*2);
-              cx.fillStyle='rgba(6,182,212,.5)';cx.fill();
-            }
-
-            /* Connecting lines from center to dots */
-            steps.forEach((_,i)=>{
-              const angle=t+(i/steps.length)*Math.PI*2;
-              const x=cx2+Math.cos(angle)*r1;
-              const y=cy2+Math.sin(angle)*r1;
-              cx.beginPath();cx.moveTo(cx2,cy2);cx.lineTo(x,y);
-              cx.strokeStyle=`rgba(79,70,229,.06)`;cx.lineWidth=1;cx.stroke();
-            });
-
-            requestAnimationFrame(frame);
-          }
-          frame();
-        })();
-        </script>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(6,182,212,.15);border-radius:16px;padding:20px;text-align:center;box-shadow:0 8px 24px rgba(6,182,212,.12);animation:afl2 5s ease-in-out infinite">
+          <div style="font-size:28px;font-weight:800;color:#06b6d4;line-height:1">+487%</div>
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px" data-en="Average ROI" data-es="ROI Promedio">Average ROI</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600;margin-top:4px">↑ 41% this quarter</div>
+        </div>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.12);border-radius:16px;padding:20px;text-align:center;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:afl3 6s ease-in-out infinite">
+          <div style="font-size:28px;font-weight:800;color:#0f172a;line-height:1">350<span style="color:#4f46e5">+</span></div>
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px" data-en="Qualified Leads" data-es="Leads">Qualified Leads</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600;margin-top:4px">↑ 18% new leads</div>
+        </div>
+        <div style="background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(16,185,129,.15);border-radius:16px;padding:20px;text-align:center;box-shadow:0 8px 24px rgba(16,185,129,.1);animation:afl1 4.5s ease-in-out infinite">
+          <div style="font-size:28px;font-weight:800;color:#10b981;line-height:1">24h</div>
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:6px" data-en="Response Time" data-es="Respuesta">Response Time</div>
+          <div style="font-size:11px;color:#4f46e5;font-weight:600;margin-top:4px">● Always on</div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
+  <style>
+    @media(max-width:768px){
+      .proc-steps-grid{grid-template-columns:1fr 1fr !important}
+      .proc-stats-grid{grid-template-columns:1fr 1fr !important;padding:20px !important}
+      #orbit-cv2{display:none}
+    }
+    @media(max-width:400px){
+      .proc-steps-grid{grid-template-columns:1fr !important}
+      .proc-stats-grid{grid-template-columns:1fr 1fr !important}
+    }
+  </style>
+
+  <script>
+  (function(){
+    const cv=document.getElementById('orbit-cv2');
+    if(!cv||window.innerWidth<768)return;
+    const cx=cv.getContext('2d');
+    let W,H,t=0;
+    function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+    rz();
+    const nodes=Array.from({length:30},()=>({
+      x:Math.random()*100,y:Math.random()*100,
+      vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*2+1
+    }));
+    function frame(){
+      rz();cx.clearRect(0,0,W,H);
+      nodes.forEach(n=>{
+        n.x+=n.vx;n.y+=n.vy;
+        if(n.x<0||n.x>100)n.vx*=-1;
+        if(n.y<0||n.y>100)n.vy*=-1;
+      });
+      nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{
+        const d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<18){
+          cx.beginPath();cx.moveTo(a.x*W/100,a.y*H/100);cx.lineTo(b.x*W/100,b.y*H/100);
+          cx.strokeStyle=`rgba(79,70,229,${.12*(1-d/18)})`;cx.lineWidth=.7;cx.stroke();
+        }
+      }));
+      nodes.forEach(n=>{
+        cx.beginPath();cx.arc(n.x*W/100,n.y*H/100,n.r,0,Math.PI*2);
+        cx.fillStyle='rgba(79,70,229,.25)';cx.fill();
+      });
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+  </script>
+</section>
 <!-- PRICING -->
 <section class="sec" id="pricing">
   <div class="ct">
