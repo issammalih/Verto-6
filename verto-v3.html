@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Verto Media Global — Digital Marketing Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+:root{
+  --p:#4f46e5;--p2:#6366f1;--p3:#818cf8;
+  --blue:#3b82f6;--cyan:#06b6d4;--green:#10b981;--pink:#ec4899;
+  --dark:#0f172a;--dark2:#1e293b;
+  --text:#1e293b;--text2:#64748b;--text3:#94a3b8;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --w:#ffffff;--bg:#f8fafc;--bg2:#f1f5f9;
+  --f:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--w);color:var(--text);font-family:var(--f);overflow-x:hidden}
+
+.page{position:relative;z-index:1}
+.ct{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ════════ NAV ════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:64px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nlogo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nlogo img{height:32px}
+.nbname{font-size:14px;font-weight:700;color:var(--dark)}
+.nsub{font-size:10px;color:var(--text2);display:block;line-height:1}
+.nl{display:flex;gap:2px;list-style:none}
+.nl a{color:var(--text2);font-size:13px;font-weight:500;text-decoration:none;padding:6px 14px;border-radius:8px;transition:.15s}
+.nl a:hover{color:var(--p);background:rgba(79,70,229,.06)}
+.nr{display:flex;align-items:center;gap:10px}
+.ls{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:3px;gap:2px}
+.lb{padding:4px 11px;border:none;border-radius:6px;background:transparent;color:var(--text2);font-family:var(--f);font-size:11px;font-weight:700;cursor:pointer;transition:.15s}
+.lb.on{background:var(--p);color:#fff}
+.bnav{padding:9px 20px;background:var(--p);color:#fff;border:none;border-radius:9px;font-family:var(--f);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;box-shadow:0 4px 14px rgba(79,70,229,.3)}
+.bnav:hover{background:var(--p2);transform:translateY(-1px)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.hbg.o span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hbg.o span:nth-child(2){opacity:0}
+.hbg.o span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob{display:none;position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+.mob.o{display:flex}
+.mob a,.mob .mbb{color:var(--dark);font-size:22px;font-weight:700;text-decoration:none;background:none;border:none;cursor:pointer;font-family:var(--f)}
+
+/* ════════ HERO ════════ */
+.hero{
+  min-height:100svh;
+  background:linear-gradient(160deg,#eef2ff 0%,#e0e7ff 20%,#dbeafe 50%,#ede9fe 80%,#fce7f3 100%);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;
+  padding:100px 24px 60px;position:relative;overflow:hidden;
+}
+/* Subtle arc decoration like reference */
+.hero::before{
+  content:'';position:absolute;
+  top:-30%;left:50%;transform:translateX(-50%);
+  width:140%;height:80%;
+  background:radial-gradient(ellipse at center top,rgba(255,255,255,.6) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-arc{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:900px;height:500px;
+  border:1px solid rgba(79,70,229,.08);
+  border-radius:0 0 50% 50%;
+  pointer-events:none;
+}
+.hero-arc2{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:1200px;height:650px;
+  border:1px solid rgba(79,70,229,.05);
+  border-radius:0 0 50% 50%;
+  pointer-events:none;
+}
+
+.badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 14px;border-radius:100px;
+  background:rgba(255,255,255,.8);border:1px solid rgba(79,70,229,.2);
+  font-size:12px;font-weight:600;color:var(--p);
+  margin-bottom:24px;backdrop-filter:blur(10px);
+  animation:fu .6s cubic-bezier(.34,1.56,.64,1) both;
+  box-shadow:0 2px 12px rgba(79,70,229,.1);
+}
+.badge svg{width:12px;height:12px}
+
+.hero h1{
+  font-size:clamp(32px,4.5vw,58px);
+  font-weight:800;line-height:1.15;
+  letter-spacing:-.025em;max-width:720px;
+  color:var(--dark);
+  animation:fu .7s .06s cubic-bezier(.34,1.56,.64,1) both;
+}
+.hero h1 .col{color:var(--p)}
+
+.hero-p{
+  font-size:15px;color:var(--text2);max-width:520px;
+  margin:18px auto 28px;line-height:1.75;
+  animation:fu .7s .12s cubic-bezier(.34,1.56,.64,1) both;
+}
+.hero-btns{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  animation:fu .7s .18s cubic-bezier(.34,1.56,.64,1) both;
+  margin-bottom:14px;
+}
+.bp{padding:12px 26px;background:var(--p);color:#fff;border:none;border-radius:10px;font-family:var(--f);font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,.3);transition:.2s;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.bp:hover{background:var(--p2);transform:translateY(-2px)}
+.bo{padding:12px 26px;background:var(--w);color:var(--text);border:1.5px solid var(--border2);border-radius:10px;font-family:var(--f);font-size:14px;font-weight:600;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:6px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.bo:hover{border-color:var(--p);color:var(--p)}
+
+/* Social proof */
+.sproof{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:44px;animation:fu .7s .24s cubic-bezier(.34,1.56,.64,1) both}
+.savs{display:flex}
+.sav{width:30px;height:30px;border-radius:50%;border:2.5px solid #fff;margin-left:-8px;background:linear-gradient(135deg,var(--p3),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.sav:first-child{margin-left:0}
+.sproof-txt{font-size:13px;color:var(--text2)}
+.sproof-txt strong{color:var(--text);font-weight:700}
+.stars{color:#f59e0b;font-size:11px;letter-spacing:1px}
+
+/* Dashboard mockup */
+.mockup-wrap{
+  width:100%;max-width:920px;
+  background:#fff;border-radius:16px;
+  border:1px solid var(--border);
+  box-shadow:0 32px 80px rgba(15,23,42,.12),0 0 0 1px rgba(79,70,229,.06);
+  overflow:hidden;
+  animation:fu .8s .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+.mock-topbar{
+  background:#f8fafc;border-bottom:1px solid var(--border);
+  padding:10px 16px;display:flex;align-items:center;gap:10px;
+}
+.mock-dots{display:flex;gap:5px}
+.mock-dot{width:10px;height:10px;border-radius:50%}
+.mock-urlbar{flex:1;background:#fff;border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:11px;color:var(--text3);text-align:center;max-width:320px;margin:0 auto}
+.mock-body{display:grid;grid-template-columns:160px 1fr;min-height:260px}
+.mock-sidebar{border-right:1px solid var(--border);padding:16px 12px;display:flex;flex-direction:column;gap:6px}
+.mock-logo{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.mock-logo-dot{width:20px;height:20px;border-radius:6px;background:var(--p);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800}
+.mock-logo-txt{font-size:11px;font-weight:700;color:var(--dark)}
+.mock-nav-item{padding:6px 8px;border-radius:6px;font-size:11px;color:var(--text2);display:flex;align-items:center;gap:6px;cursor:default}
+.mock-nav-item.active{background:rgba(79,70,229,.08);color:var(--p);font-weight:600}
+.mock-nav-dot{width:14px;height:14px;border-radius:4px;background:currentColor;opacity:.3;flex-shrink:0}
+.mock-main{padding:16px;display:flex;flex-direction:column;gap:12px}
+.mock-header{display:flex;justify-content:space-between;align-items:center}
+.mock-title{font-size:13px;font-weight:700;color:var(--dark)}
+.mock-sub{font-size:10px;color:var(--text3)}
+.mock-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mock-stat{background:var(--bg);border-radius:10px;padding:10px 12px;border:1px solid var(--border)}
+.mock-stat-v{font-size:18px;font-weight:800;color:var(--dark);display:block;line-height:1}
+.mock-stat-l{font-size:9px;color:var(--text3);display:block;margin-top:3px}
+.mock-stat-g{font-size:9px;color:var(--green);font-weight:600;margin-top:2px;display:block}
+.mock-charts{display:grid;grid-template-columns:1fr 140px;gap:10px}
+.mock-chart-box{background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border)}
+.mock-chart-title{font-size:10px;font-weight:700;color:var(--dark);margin-bottom:8px;display:flex;justify-content:space-between}
+.mock-chart-legend{display:flex;gap:10px}
+.mock-legend-dot{width:6px;height:6px;border-radius:50%;margin-top:3px}
+.mock-legend-txt{font-size:8px;color:var(--text3)}
+.mock-bars-wrap{display:flex;gap:4px;align-items:flex-end;height:50px}
+.mbar{flex:1;border-radius:3px 3px 0 0;min-width:6px}
+.mock-donut-box{background:var(--bg);border-radius:10px;padding:12px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mock-donut-title{font-size:10px;font-weight:700;color:var(--dark);margin-bottom:8px;align-self:flex-start}
+.donut-legend{display:flex;flex-direction:column;gap:5px;margin-top:8px;align-self:flex-start}
+.donut-row{display:flex;align-items:center;gap:5px;font-size:8px;color:var(--text2)}
+.donut-sq{width:6px;height:6px;border-radius:2px;flex-shrink:0}
+
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ════════ TRUSTED BY ════════ */
+.trusted{padding:32px 0;border-bottom:1px solid var(--border);background:var(--w)}
+.trusted-label{font-size:12px;color:var(--text3);text-align:center;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.trusted-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.tlogo{font-size:13px;font-weight:700;color:var(--text3);display:flex;align-items:center;gap:6px}
+.tlogo-icon{width:18px;height:18px;border-radius:4px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px}
+
+/* ════════ SECTIONS ════════ */
+.sec{padding:88px 0}
+.sec.bg{background:var(--bg)}
+.sec.dark{background:var(--dark);color:#fff}
+.sh{margin-bottom:52px}
+.sh.c{text-align:center}
+.stag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin-bottom:12px}
+.stag::before{content:'';width:16px;height:1.5px;background:var(--p);border-radius:2px}
+.sh h2{font-size:clamp(26px,3.5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.12;color:var(--dark)}
+.sh h2 em{font-style:normal;color:var(--p)}
+.sec.dark .sh h2{color:#fff}
+.sec.dark .stag{color:var(--p3)}
+.sec.dark .stag::before{background:var(--p3)}
+.sh p{color:var(--text2);font-size:14px;line-height:1.7;margin-top:12px;max-width:460px}
+.sh.c p{margin:12px auto 0}
+.sec.dark .sh p{color:rgba(255,255,255,.5)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:.65s cubic-bezier(.34,1.56,.64,1)}
+.rvl{opacity:0;transform:translateX(-28px);transition:.65s cubic-bezier(.34,1.56,.64,1)}
+.rvr{opacity:0;transform:translateX(28px);transition:.65s cubic-bezier(.34,1.56,.64,1)}
+.rv.in,.rvl.in,.rvr.in{opacity:1;transform:none}
+.d1{transition-delay:.04s}.d2{transition-delay:.08s}.d3{transition-delay:.12s}
+.d4{transition-delay:.16s}.d5{transition-delay:.2s}.d6{transition-delay:.24s}
+.d7{transition-delay:.28s}.d8{transition-delay:.32s}.d9{transition-delay:.36s}
+
+/* ════════ ABOUT ════════ */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.avis{
+  background:var(--dark);border-radius:20px;padding:32px;
+  min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;overflow:hidden;
+  box-shadow:0 24px 60px rgba(15,23,42,.2);
+}
+.avis-glow{position:absolute;top:-30%;left:-20%;width:70%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);pointer-events:none}
+.avis-glow2{position:absolute;bottom:-20%;right:-10%;width:55%;height:55%;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.12),transparent 70%);pointer-events:none}
+.avis-bg-txt{position:absolute;top:20px;left:20px;font-size:72px;font-weight:800;color:rgba(255,255,255,.04);letter-spacing:-.04em;pointer-events:none;line-height:1}
+.avis-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;z-index:1}
+.avis-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px}
+.avis-card-v{font-size:24px;font-weight:800;display:block;line-height:1;background:linear-gradient(135deg,#a5b4fc,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.avis-card-l{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
+.avis-card-g{font-size:9px;color:var(--green);font-weight:600;margin-top:3px;display:block}
+.avis-bar-card{grid-column:span 2;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+.avis-bar-header{display:flex;justify-content:space-between;margin-bottom:10px}
+.avis-bar-t{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em}
+.live-badge{font-size:9px;color:var(--green);font-weight:700;display:flex;align-items:center;gap:3px}
+.live-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:ldot 1.5s infinite}
+@keyframes ldot{0%,100%{opacity:1}50%{opacity:.3}}
+.abars{display:flex;gap:4px;align-items:flex-end;height:38px}
+.ab{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))}
+.ab:nth-child(1){height:40%;animation:ab1 3s ease-in-out infinite}
+.ab:nth-child(2){height:65%;animation:ab2 3s ease-in-out infinite}
+.ab:nth-child(3){height:50%;animation:ab3 3s ease-in-out infinite}
+.ab:nth-child(4){height:80%;animation:ab4 3s ease-in-out infinite}
+.ab:nth-child(5){height:60%;animation:ab5 3s ease-in-out infinite}
+.ab:nth-child(6){height:90%;animation:ab6 3s ease-in-out infinite}
+.ab:nth-child(7){height:100%;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2));animation:ab7 3s ease-in-out infinite}
+@keyframes ab1{0%,100%{height:40%}50%{height:58%}}
+@keyframes ab2{0%,100%{height:65%}50%{height:45%}}
+@keyframes ab3{0%,100%{height:50%}50%{height:72%}}
+@keyframes ab4{0%,100%{height:80%}50%{height:60%}}
+@keyframes ab5{0%,100%{height:60%}50%{height:82%}}
+@keyframes ab6{0%,100%{height:90%}50%{height:68%}}
+@keyframes ab7{0%,100%{height:100%}50%{height:78%}}
+.atxt p{color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:22px}
+.abtns{display:flex;gap:10px;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.chip{padding:5px 12px;border:1px solid var(--border);border-radius:100px;font-size:11px;font-weight:600;color:var(--text2);background:var(--w);transition:.15s;cursor:default}
+.chip:hover{border-color:var(--p);color:var(--p)}
+
+/* ════════ SERVICES ════════ */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sc{background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:24px;cursor:pointer;transition:.3s;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.sc:hover{border-color:rgba(79,70,229,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(79,70,229,.1)}
+.sico{width:40px;height:40px;border-radius:10px;background:rgba(79,70,229,.08);border:1px solid rgba(79,70,229,.12);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
+.sarr{position:absolute;top:18px;right:18px;width:26px;height:26px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3);transition:.2s}
+.sc:hover .sarr{border-color:var(--p);color:var(--p);transform:rotate(45deg)}
+.sc h3{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.sc p{font-size:12px;color:var(--text2);line-height:1.6}
+
+/* ════════ WHY CHOOSE ════════ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 24px;transition:.3s;position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--p3),#67e8f9);transform:scaleX(0);transform-origin:left;transition:.35s}
+.why-card:hover{transform:translateY(-4px);border-color:rgba(129,140,248,.25)}
+.why-card:hover::after{transform:scaleX(1)}
+.why-ico{font-size:26px;margin-bottom:16px;display:block}
+.why-card h3{font-size:16px;font-weight:700;margin-bottom:8px;color:#fff}
+.why-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+
+/* ════════ STATS ════════ */
+.stg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stc{background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:32px 20px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.stc:hover{transform:translateY(-3px);border-color:rgba(79,70,229,.2);box-shadow:0 10px 28px rgba(79,70,229,.1)}
+.stc::before{content:'';display:block;width:32px;height:2.5px;background:linear-gradient(90deg,var(--p),var(--cyan));border-radius:2px;margin:0 auto 14px}
+.stn{font-size:clamp(32px,4vw,52px);font-weight:800;display:block;background:linear-gradient(135deg,var(--p),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stl{font-size:12px;color:var(--text2);display:block;margin-top:7px;font-weight:500}
+
+/* ════════ HOW TO GROW ════════ */
+.grow-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.grow-canvas-box{
+  background:var(--dark);border-radius:20px;
+  height:420px;position:relative;overflow:hidden;
+  box-shadow:0 24px 60px rgba(15,23,42,.2);
+}
+#grow-cv{width:100%;height:100%;display:block}
+.grow-txt p{color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:24px}
+.gsteps{display:flex;flex-direction:column;gap:14px}
+.gstep{display:flex;gap:12px;align-items:flex-start}
+.gnum{width:30px;height:30px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(79,70,229,.3);margin-top:1px}
+.gstep-t{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px}
+.gstep-p{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* ════════ PROCESS ════════ */
+.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.pg::before{content:'';position:absolute;top:29px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(79,70,229,.2),rgba(99,102,241,.3),rgba(79,70,229,.2),transparent);pointer-events:none}
+.ps{background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:24px 14px;text-align:center;position:relative;z-index:1;transition:.3s;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.ps:hover{border-color:rgba(79,70,229,.2);transform:translateY(-4px);box-shadow:0 10px 28px rgba(79,70,229,.08)}
+.pnum{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(79,70,229,.3)}
+.ps h4{font-size:12px;font-weight:700;margin-bottom:5px;color:var(--dark)}
+.ps p{font-size:11px;color:var(--text2);line-height:1.5}
+
+/* ════════ PRICING ════════ */
+.prg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.prc{background:var(--w);border:1.5px solid var(--border);border-radius:18px;padding:32px 28px;position:relative;transition:.3s;box-shadow:0 4px 16px rgba(15,23,42,.06)}
+.prc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+.prc.hot{background:linear-gradient(150deg,var(--dark) 0%,var(--dark2) 100%);border-color:rgba(99,102,241,.4);box-shadow:0 20px 50px rgba(15,23,42,.25)}
+.prc.hot .pname,.prc.hot .pval{color:#fff}
+.prc.hot .ptag,.prc.hot .pper{color:rgba(255,255,255,.45)}
+.prc.hot .pfeats li{color:rgba(255,255,255,.55)}
+.prc.hot .pfeats li::before{background:rgba(129,140,248,.2);color:#a5b4fc}
+.phot{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:100px;background:linear-gradient(90deg,var(--p),var(--pink));font-size:10px;font-weight:700;white-space:nowrap;color:#fff}
+.pname{font-size:18px;font-weight:800;margin-bottom:5px;color:var(--dark)}
+.ptag{font-size:11px;color:var(--text2);margin-bottom:20px}
+.pval{font-size:44px;font-weight:800;color:var(--dark);line-height:1}
+.pval-col{background:linear-gradient(135deg,var(--p),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pval-hot{background:linear-gradient(135deg,#a5b4fc,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:44px;font-weight:800;line-height:1}
+.pper{font-size:11px;color:var(--text2);margin:5px 0 22px}
+.pfeats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.pfeats li{font-size:12px;color:var(--text2);display:flex;align-items:flex-start;gap:8px}
+.pfeats li::before{content:'✓';width:16px;height:16px;border-radius:50%;flex-shrink:0;background:rgba(79,70,229,.1);color:var(--p);font-size:9px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.pbtn{width:100%;padding:12px;border-radius:10px;font-family:var(--f);font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.pbtn.s{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;box-shadow:0 6px 18px rgba(79,70,229,.35)}
+.pbtn.s:hover{transform:translateY(-1px)}
+.pbtn.g{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+.pbtn.g:hover{border-color:var(--p);color:var(--p)}
+.pbtn.gd{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)}
+.pbtn.gd:hover{border-color:rgba(129,140,248,.4);color:#fff}
+
+/* ════════ INDUSTRIES ════════ */
+.ig{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ic{background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:22px 16px;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(15,23,42,.03)}
+.ic:hover{border-color:rgba(79,70,229,.2);transform:translateY(-3px);box-shadow:0 10px 24px rgba(79,70,229,.08)}
+.iico{font-size:24px;display:block;margin-bottom:9px}
+.ic h4{font-size:13px;font-weight:700;margin-bottom:3px;color:var(--dark)}
+.ic p{font-size:10px;color:var(--text2);line-height:1.4}
+
+/* ════════ FAQ ════════ */
+.fl{display:flex;flex-direction:column;gap:8px;max-width:740px}
+.fi{background:var(--w);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:.2s;box-shadow:0 2px 8px rgba(15,23,42,.03)}
+.fi.on{border-color:rgba(79,70,229,.2);box-shadow:0 6px 20px rgba(79,70,229,.07)}
+.fq{width:100%;padding:18px 22px;background:transparent;border:none;color:var(--dark);font-family:var(--f);font-size:14px;font-weight:600;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.fic{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text2);flex-shrink:0;transition:.25s}
+.fi.on .fic{transform:rotate(45deg);border-color:var(--p);color:var(--p);background:rgba(79,70,229,.07)}
+.fa{padding:0 22px;font-size:13px;color:var(--text2);line-height:1.7;max-height:0;overflow:hidden;transition:.3s ease}
+.fi.on .fa{max-height:130px;padding:0 22px 18px}
+
+/* ════════ CTA ════════ */
+.ctasec{padding:88px 24px;text-align:center;background:var(--bg)}
+.ctabox{max-width:680px;margin:0 auto;padding:64px 44px;background:linear-gradient(150deg,var(--dark) 0%,var(--dark2) 100%);border-radius:24px;position:relative;overflow:hidden;box-shadow:0 32px 80px rgba(15,23,42,.25)}
+.ctabox::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.18),transparent 70%);pointer-events:none}
+.ctabox h2{font-size:clamp(24px,3.5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;color:#fff;position:relative;z-index:1}
+.ctabox p{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:28px;position:relative;z-index:1}
+.ctabtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.bp-w{padding:12px 28px;background:#fff;color:var(--p);border:none;border-radius:10px;font-family:var(--f);font-size:14px;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:6px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.bp-w:hover{transform:translateY(-2px)}
+.bo-w{padding:12px 28px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12);border-radius:10px;font-family:var(--f);font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.bo-w:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ════════ FOOTER ════════ */
+footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w)}
+.ftg{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px;margin-bottom:40px}
+.fb img{height:32px}
+.fb p{font-size:13px;color:var(--text2);line-height:1.7;margin:14px 0 18px;max-width:240px}
+.socs{display:flex;gap:7px}
+.soc{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text2);transition:.15s;background:var(--w)}
+.soc:hover{border-color:var(--p);color:var(--p);background:rgba(79,70,229,.06)}
+.fcol h4{font-size:12px;font-weight:700;margin-bottom:14px;color:var(--dark)}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcol ul li a{color:var(--text2);text-decoration:none;font-size:12px;transition:.15s}
+.fcol ul li a:hover{color:var(--p)}
+.fbot{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{font-size:11px;color:var(--text2)}
+
+/* WA */
+.wa{position:fixed;bottom:22px;right:22px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:997;text-decoration:none;box-shadow:0 6px 22px rgba(37,211,102,.4);transition:.2s}
+.wa:hover{transform:scale(1.08)}
+.wa::before{content:'';position:absolute;inset:-5px;border:2px solid rgba(37,211,102,.25);border-radius:50%;animation:wap 2s infinite}
+@keyframes wap{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+.wa svg{width:25px;height:25px;fill:#fff}
+
+/* MODAL */
+.mbg{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(10px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:.25s}
+.mbg.open{opacity:1;visibility:visible}
+.mb{background:var(--w);border:1px solid var(--border);border-radius:20px;padding:32px 28px;width:100%;max-width:460px;transform:translateY(20px) scale(.97);transition:.3s cubic-bezier(.34,1.56,.64,1);position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(15,23,42,.15)}
+.mbg.open .mb{transform:none}
+.mx{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.mx:hover{border-color:var(--p);color:var(--p)}
+.mb h3{font-size:20px;font-weight:800;margin-bottom:4px;color:var(--dark)}
+.msub{font-size:12px;color:var(--text2);margin-bottom:20px}
+.mts{display:flex;gap:4px;background:var(--bg);border-radius:10px;padding:3px;margin-bottom:20px}
+.mt{flex:1;padding:8px;border:none;border-radius:8px;background:transparent;color:var(--text2);font-family:var(--f);font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:.15s}
+.mt.on{background:var(--p);color:#fff;box-shadow:0 3px 10px rgba(79,70,229,.3)}
+.mp{display:none}.mp.on{display:block}
+.fg2{margin-bottom:12px}
+.fg2 label{display:block;font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px}
+.fg2 input,.fg2 textarea,.fg2 select{width:100%;padding:10px 13px;background:var(--bg);border:1.5px solid var(--border);border-radius:9px;color:var(--dark);font-family:var(--f);font-size:13px;outline:none;transition:.15s}
+.fg2 input:focus,.fg2 textarea:focus,.fg2 select:focus{border-color:var(--p);background:var(--w)}
+.fg2 textarea{height:78px;resize:none}
+.fg2 select{appearance:none;cursor:pointer}
+.msend{width:100%;padding:12px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;border-radius:9px;font-family:var(--f);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;margin-top:4px;box-shadow:0 5px 16px rgba(79,70,229,.3)}
+.msend:hover{transform:translateY(-1px)}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .why-grid{grid-template-columns:1fr 1fr}
+  .mock-body{grid-template-columns:1fr}
+  .mock-sidebar{display:none}
+  .mock-stats{grid-template-columns:repeat(2,1fr)}
+  .mock-charts{grid-template-columns:1fr}
+  .mock-donut-box{display:none}
+}
+@media(max-width:768px){
+  nav{padding:0 16px}
+  nav .nl{display:none}
+  nav .bnav{display:none}
+  .hbg{display:flex}
+  .hero{padding:88px 16px 48px}
+  .hero h1{font-size:28px}
+  .hero-p{font-size:14px}
+  .hero-btns{flex-direction:column;align-items:center}
+  .bp,.bo{width:100%;max-width:280px;justify-content:center}
+  .mockup-wrap{overflow-x:auto}
+  .ag{grid-template-columns:1fr}
+  .avis{min-height:240px}
+  .sg{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .stg{grid-template-columns:repeat(2,1fr)}
+  .pg{grid-template-columns:1fr 1fr}
+  .pg::before{display:none}
+  .prg{grid-template-columns:1fr}
+  .prc.hot{transform:none}
+  .ig{grid-template-columns:repeat(2,1fr)}
+  .grow-grid{grid-template-columns:1fr}
+  .grow-canvas-box{height:240px}
+  .ftg{grid-template-columns:1fr;gap:24px}
+  .fb p{max-width:100%}
+  .fbot{flex-direction:column;text-align:center}
+  .sec{padding:60px 0}
+  .sh{margin-bottom:36px}
+  .ctabox{padding:40px 20px}
+  .mb{padding:26px 18px}
+  .ctabtns{flex-direction:column;align-items:center}
+  .bp-w,.bo-w{width:100%;max-width:280px;justify-content:center}
+}
+@media(max-width:380px){
+  .hero h1{font-size:24px}
+  .ig{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nlogo">
+    <img src="https://i.postimg.cc/25ZwMQNh/logo-k7al-jaadida.png" alt="Verto Media Global">
+    <div>
+      <span class="nbname">Verto Media Global</span>
+      <span class="nsub" data-en="Digital Marketing Agency" data-es="Agencia de Marketing Digital">Digital Marketing Agency</span>
+    </div>
+  </a>
+  <ul class="nl">
+    <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+    <li><a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a></li>
+    <li><a href="#faq" data-en="FAQ" data-es="FAQ">FAQ</a></li>
+  </ul>
+  <div class="nr">
+    <div class="ls"><button class="lb on" onclick="L('en')">EN</button><button class="lb" onclick="L('es')">ES</button></div>
+    <button class="bnav" onclick="openM()" data-en="Contact →" data-es="Contactar →">Contact →</button>
+    <div class="hbg" id="hbg" onclick="mobT()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="#services" onclick="mobT()" data-en="Services" data-es="Servicios">Services</a>
+  <a href="#about" onclick="mobT()" data-en="About" data-es="Nosotros">About</a>
+  <a href="#pricing" onclick="mobT()" data-en="Pricing" data-es="Precios">Pricing</a>
+  <a href="#faq" onclick="mobT()" data-en="FAQ" data-es="FAQ">FAQ</a>
+  <button class="mbb bp" onclick="openM();mobT()" data-en="🚀 Get Started" data-es="🚀 Comenzar">🚀 Get Started</button>
+  <div class="ls" style="margin-top:8px"><button class="lb on" onclick="L('en')">EN</button><button class="lb" onclick="L('es')">ES</button></div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-arc"></div>
+  <div class="hero-arc2"></div>
+  <div class="badge">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    <span data-en="Join +200 scaling businesses →" data-es="Únete a +200 negocios en crecimiento →">Join +200 scaling businesses →</span>
+  </div>
+  <h1>
+    <span data-en="Smarter Solutions for" data-es="Soluciones Inteligentes para">Smarter Solutions for</span><br>
+    <span class="col" data-en="Better Marketing Outcomes" data-es="Mejores Resultados de Marketing">Better Marketing Outcomes</span>
+  </h1>
+  <p class="hero-p" data-en="The smarter way to grow your brand starts with campaigns that combine strategy, creativity, and data — in 6 languages across 8 industries." data-es="La forma más inteligente de hacer crecer tu marca comienza con campañas que combinan estrategia, creatividad y datos — en 6 idiomas en 8 industrias.">The smarter way to grow your brand starts with campaigns that combine strategy, creativity, and data — in 6 languages across 8 industries.</p>
+  <div class="hero-btns">
+    <button class="bp" onclick="openM()" data-en="Get Started for Free →" data-es="Empezar Gratis →">Get Started for Free →</button>
+    <a href="#about" class="bo" data-en="Book A Free Demo →" data-es="Reservar Demo Gratis →">Book A Free Demo →</a>
+  </div>
+  <div class="sproof">
+    <div class="savs">
+      <div class="sav">A</div><div class="sav">M</div><div class="sav">S</div><div class="sav">K</div>
+    </div>
+    <div class="sproof-txt">
+      <div class="stars">★★★★★</div>
+      <div><strong data-en="4.9/5 Rating" data-es="4.9/5 Calificación">4.9/5 Rating</strong> <span data-en="over 200+ reviews" data-es="más de 200 reseñas">over 200+ reviews</span></div>
+    </div>
+  </div>
+
+  <!-- Dashboard mockup -->
+  <div class="mockup-wrap rv">
+    <div class="mock-topbar">
+      <div class="mock-dots">
+        <div class="mock-dot" style="background:#ff5f57"></div>
+        <div class="mock-dot" style="background:#febc2e"></div>
+        <div class="mock-dot" style="background:#28c840"></div>
+      </div>
+      <div class="mock-urlbar">vertomediaglobal.com — Campaign Analytics</div>
+    </div>
+    <div class="mock-body">
+      <div class="mock-sidebar">
+        <div class="mock-logo">
+          <div class="mock-logo-dot">V</div>
+          <div class="mock-logo-txt">Verto</div>
+        </div>
+        <div class="mock-nav-item active"><div class="mock-nav-dot" style="background:var(--p)"></div><span data-en="Overview" data-es="Vista general">Overview</span></div>
+        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Campaigns" data-es="Campañas">Campaigns</span></div>
+        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Analytics" data-es="Analítica">Analytics</span></div>
+        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span>SEO</span></div>
+        <div class="mock-nav-item"><div class="mock-nav-dot"></div><span data-en="Reports" data-es="Informes">Reports</span></div>
+      </div>
+      <div class="mock-main">
+        <div class="mock-header">
+          <div>
+            <div class="mock-title" data-en="Welcome Back, Verto 👋" data-es="Bienvenido, Verto 👋">Welcome Back, Verto 👋</div>
+            <div class="mock-sub" data-en="Here is your campaign performance overview" data-es="Aquí está el resumen de rendimiento">Here is your campaign performance overview</div>
+          </div>
+        </div>
+        <div class="mock-stats">
+          <div class="mock-stat">
+            <span class="mock-stat-v">+125%</span>
+            <span class="mock-stat-l" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</span>
+            <span class="mock-stat-g">↑ 23% this month</span>
+          </div>
+          <div class="mock-stat">
+            <span class="mock-stat-v">+487%</span>
+            <span class="mock-stat-l" data-en="Avg. ROI" data-es="ROI Promedio">Avg. ROI</span>
+            <span class="mock-stat-g">↑ 41% this quarter</span>
+          </div>
+          <div class="mock-stat">
+            <span class="mock-stat-v">350+</span>
+            <span class="mock-stat-l" data-en="Qualified Leads" data-es="Leads">Qualified Leads</span>
+            <span class="mock-stat-g">↑ 18% new leads</span>
+          </div>
+          <div class="mock-stat">
+            <span class="mock-stat-v">24h</span>
+            <span class="mock-stat-l" data-en="Response Time" data-es="Respuesta">Response Time</span>
+            <span class="mock-stat-g" style="color:var(--p)">● Always on</span>
+          </div>
+        </div>
+        <div class="mock-charts">
+          <div class="mock-chart-box">
+            <div class="mock-chart-title">
+              <span data-en="Campaign Performance Analytics" data-es="Analítica de Campañas">Campaign Performance Analytics</span>
+              <div class="mock-chart-legend">
+                <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--p)"></div><span class="mock-legend-txt">Organic</span></div>
+                <div style="display:flex;align-items:center;gap:3px"><div class="mock-legend-dot" style="background:var(--cyan)"></div><span class="mock-legend-txt">Paid</span></div>
+              </div>
+            </div>
+            <div class="mock-bars-wrap">
+              <div class="mbar" style="height:38%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab1 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:60%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab2 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:45%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab3 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:75%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab4 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:55%;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2));animation:ab5 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:88%;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2));animation:ab6 3s ease-in-out infinite"></div>
+              <div class="mbar" style="height:100%;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2));animation:ab7 3s ease-in-out infinite"></div>
+            </div>
+          </div>
+          <div class="mock-donut-box">
+            <div class="mock-donut-title" data-en="Channels" data-es="Canales">Channels</div>
+            <svg width="80" height="80" viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#e2e8f0" stroke-width="12"/>
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#4f46e5" stroke-width="12" stroke-dasharray="70 106" stroke-dashoffset="0" stroke-linecap="round"/>
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#06b6d4" stroke-width="12" stroke-dasharray="45 131" stroke-dashoffset="-70" stroke-linecap="round"/>
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#ec4899" stroke-width="12" stroke-dasharray="28 148" stroke-dashoffset="-115" stroke-linecap="round"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="donut-row"><div class="donut-sq" style="background:#4f46e5"></div>SEO 40%</div>
+              <div class="donut-row"><div class="donut-sq" style="background:#06b6d4"></div>Paid 26%</div>
+              <div class="donut-row"><div class="donut-sq" style="background:#ec4899"></div>Social 16%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<div class="trusted">
+  <div class="ct">
+    <div class="trusted-label" data-en="Trusted by 200+ founders & business owners worldwide" data-es="Confiado por 200+ fundadores y dueños de negocios">Trusted by 200+ founders & business owners worldwide</div>
+    <div class="trusted-logos">
+      <div class="tlogo"><div class="tlogo-icon">⚡</div>Nexmark</div>
+      <div class="tlogo"><div class="tlogo-icon">◈</div>Graphicraft</div>
+      <div class="tlogo"><div class="tlogo-icon">✦</div>Auraicons</div>
+      <div class="tlogo"><div class="tlogo-icon">◉</div>Logolaze</div>
+      <div class="tlogo"><div class="tlogo-icon">▲</div>Primeark</div>
+      <div class="tlogo"><div class="tlogo-icon">○</div>Logozen</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec bg" id="about">
+  <div class="ct">
+    <div class="ag">
+      <div class="avis rvl">
+        <div class="avis-glow"></div>
+        <div class="avis-glow2"></div>
+        <div class="avis-bg-txt">VMG</div>
+        <div class="avis-cards">
+          <div class="avis-card">
+            <span class="avis-card-v">+125%</span>
+            <span class="avis-card-l" data-en="Traffic Growth" data-es="Crecimiento">Traffic Growth</span>
+            <span class="avis-card-g">↑ 23% this month</span>
+          </div>
+          <div class="avis-card">
+            <span class="avis-card-v">+487%</span>
+            <span class="avis-card-l" data-en="Average ROI" data-es="ROI Promedio">Average ROI</span>
+            <span class="avis-card-g">↑ 41% this quarter</span>
+          </div>
+          <div class="avis-bar-card">
+            <div class="avis-bar-header">
+              <span class="avis-bar-t" data-en="Campaign Performance" data-es="Rendimiento">Campaign Performance</span>
+              <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+            </div>
+            <div class="abars">
+              <div class="ab"></div><div class="ab"></div><div class="ab"></div>
+              <div class="ab"></div><div class="ab"></div><div class="ab"></div>
+              <div class="ab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rvr">
+        <div class="sh">
+          <span class="stag" data-en="About Us" data-es="Nosotros">About Us</span>
+          <h2 data-en="We don't just market.<br><em>We build empires.</em>" data-es="No solo marketing.<br><em>Construimos imperios.</em>">We don't just market.<br><em>We build empires.</em></h2>
+        </div>
+        <p class="atxt" data-en="Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert." data-es="Con sede en Casablanca, operando globalmente — Verto Media Global es una agencia de marketing digital multilingüe construida para marcas ambiciosas. Combinamos estrategia, creatividad y datos para campañas que realmente convierten.">Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert.</p>
+        <div class="chips">
+          <span class="chip" data-en="Strategic Thinking" data-es="Pensamiento Estratégico">Strategic Thinking</span>
+          <span class="chip" data-en="Data-Driven" data-es="Basado en Datos">Data-Driven</span>
+          <span class="chip" data-en="Multilingual" data-es="Multilingüe">Multilingual</span>
+          <span class="chip" data-en="6 Languages" data-es="6 Idiomas">6 Languages</span>
+          <span class="chip" data-en="Global Reach" data-es="Alcance Global">Global Reach</span>
+          <span class="chip">EN · ES · FR · DE · IT · AR</span>
+        </div>
+        <div class="abtns" style="margin-top:24px">
+          <button class="bp" onclick="openM()" data-en="Work With Us" data-es="Trabaja Con Nosotros">Work With Us</button>
+          <a href="#services" class="bo" data-en="Our Services" data-es="Nuestros Servicios">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="ct">
+    <div class="sh c rv">
+      <span class="stag" data-en="Services" data-es="Servicios">Services</span>
+      <h2 data-en="Everything you need <em>to grow</em>" data-es="Todo lo que necesitas <em>para crecer</em>">Everything you need <em>to grow</em></h2>
+      <p data-en="9 specialized services to amplify your brand across every digital channel." data-es="9 servicios especializados para amplificar tu marca en cada canal digital.">9 specialized services to amplify your brand across every digital channel.</p>
+    </div>
+    <div class="sg">
+      <div class="sc rv d1" onclick="openM()"><div class="sico">📧</div><div class="sarr">↗</div><h3 data-en="Email Marketing" data-es="Email Marketing">Email Marketing</h3><p data-en="Strategic campaigns that nurture leads and drive conversions at every funnel stage." data-es="Campañas estratégicas que nutren leads y generan conversiones.">Strategic campaigns that nurture leads and drive conversions at every funnel stage.</p></div>
+      <div class="sc rv d2" onclick="openM()"><div class="sico">🧭</div><div class="sarr">↗</div><h3 data-en="Digital Strategy" data-es="Estrategia Digital">Digital Strategy</h3><p data-en="Custom roadmaps for brand awareness, conversion, and long-term loyalty." data-es="Hojas de ruta personalizadas para reconocimiento y lealtad.">Custom roadmaps for brand awareness, conversion, and long-term loyalty.</p></div>
+      <div class="sc rv d3" onclick="openM()"><div class="sico">📊</div><div class="sarr">↗</div><h3 data-en="Performance Analytics" data-es="Analítica">Performance Analytics</h3><p data-en="Deep tracking of traffic, ROI, and engagement with clear monthly reports." data-es="Seguimiento profundo del tráfico, ROI y participación.">Deep tracking of traffic, ROI, and engagement with clear monthly reports.</p></div>
+      <div class="sc rv d4" onclick="openM()"><div class="sico">🎨</div><div class="sarr">↗</div><h3 data-en="Content Creation" data-es="Creación de Contenido">Content Creation</h3><p data-en="Professional visual production and strategic copywriting that captures attention." data-es="Producción visual profesional y redacción estratégica.">Professional visual production and strategic copywriting that captures attention.</p></div>
+      <div class="sc rv d5" onclick="openM()"><div class="sico">🔍</div><div class="sarr">↗</div><h3 data-en="SEO & Visibility" data-es="SEO & Visibilidad">SEO & Visibility</h3><p data-en="On-page and off-page optimization that puts your brand at the top of Google." data-es="Optimización que coloca tu marca en la cima de Google.">On-page and off-page optimization that puts your brand at the top of Google.</p></div>
+      <div class="sc rv d6" onclick="openM()"><div class="sico">📱</div><div class="sarr">↗</div><h3 data-en="Social Media Management" data-es="Gestión de Redes">Social Media Management</h3><p data-en="Full-service social strategy, content calendar, community management." data-es="Estrategia social completa, calendario de contenido y gestión.">Full-service social strategy, content calendar, community management.</p></div>
+      <div class="sc rv d7" onclick="openM()"><div class="sico">📣</div><div class="sarr">↗</div><h3 data-en="Paid Advertising" data-es="Publicidad de Pago">Paid Advertising</h3><p data-en="High-performance ads on Meta, Google, and TikTok with rigorous A/B testing." data-es="Anuncios en Meta, Google y TikTok con pruebas A/B rigurosas.">High-performance ads on Meta, Google, and TikTok with rigorous A/B testing.</p></div>
+      <div class="sc rv d8" onclick="openM()"><div class="sico">💎</div><div class="sarr">↗</div><h3 data-en="Branding & Identity" data-es="Branding e Identidad">Branding & Identity</h3><p data-en="Logo, brand guidelines, and web design that makes your brand unforgettable." data-es="Logo, directrices de marca y diseño web memorable.">Logo, brand guidelines, and web design that makes your brand unforgettable.</p></div>
+      <div class="sc rv d9" onclick="openM()"><div class="sico">🎬</div><div class="sarr">↗</div><h3 data-en="Video Marketing" data-es="Marketing de Video">Video Marketing</h3><p data-en="Engaging video content for social media, ads, and brand storytelling." data-es="Contenido de video para redes sociales y publicidad.">Engaging video content for social media, ads, and brand storytelling.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE (dark section) -->
+<section class="sec dark" id="features">
+  <div class="ct">
+    <div class="sh c rv">
+      <span class="stag" data-en="Why Verto" data-es="Por qué Verto">Why Verto</span>
+      <h2 data-en="Why businesses choose <em>Verto Media</em>" data-es="Por qué los negocios eligen <em>Verto Media</em>">Why businesses choose <em>Verto Media</em></h2>
+      <p data-en="Businesses choose Verto because it simplifies the complexity of digital marketing." data-es="Los negocios eligen Verto porque simplifica la complejidad del marketing digital.">Businesses choose Verto because it simplifies the complexity of digital marketing.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv d1"><span class="why-ico">🎯</span><h3 data-en="Strategic Approach" data-es="Enfoque Estratégico">Strategic Approach</h3><p data-en="Every campaign starts with a deep brand audit and a custom action plan tailored to your market." data-es="Cada campaña comienza con una auditoría de marca y un plan personalizado.">Every campaign starts with a deep brand audit and a custom action plan tailored to your market.</p></div>
+      <div class="why-card rv d2"><span class="why-ico">🌍</span><h3 data-en="Multilingual Reach" data-es="Alcance Multilingüe">Multilingual Reach</h3><p data-en="We operate natively in 6 languages: English, Spanish, French, German, Italian, Arabic." data-es="Operamos en 6 idiomas: inglés, español, francés, alemán, italiano, árabe.">We operate natively in 6 languages: English, Spanish, French, German, Italian, Arabic.</p></div>
+      <div class="why-card rv d3"><span class="why-ico">📈</span><h3 data-en="Measurable Results" data-es="Resultados Medibles">Measurable Results</h3><p data-en="Every metric tracked, every campaign optimized. Monthly reports with full transparency." data-es="Cada métrica rastreada, cada campaña optimizada. Informes mensuales con total transparencia.">Every metric tracked, every campaign optimized. Monthly reports with full transparency.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec" id="stats">
+  <div class="ct">
+    <div class="sh c rv">
+      <span class="stag" data-en="Our Impact" data-es="Nuestro Impacto">Our Impact</span>
+      <h2 data-en="Numbers that <em>speak</em>" data-es="Números que <em>hablan</em>">Numbers that <em>speak</em></h2>
+    </div>
+    <div class="stg rv">
+      <div class="stc"><span class="stn" data-count="125">0</span><span class="stl" data-en="% Average Traffic Growth" data-es="% Crecimiento de Tráfico">% Average Traffic Growth</span></div>
+      <div class="stc"><span class="stn" data-count="487">0</span><span class="stl" data-en="% Average ROI" data-es="% ROI Promedio">% Average ROI</span></div>
+      <div class="stc"><span class="stn" data-count="350">0</span><span class="stl" data-en="+ Qualified Leads" data-es="+ Leads Calificados">+ Qualified Leads</span></div>
+      <div class="stc"><span class="stn">24h</span><span class="stl" data-en="Max Response Time" data-es="Tiempo de Respuesta">Max Response Time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO GROW -->
+<section class="sec bg" id="process">
+  <div class="ct">
+    <div class="grow-grid">
+      <div class="grow-canvas-box rvl">
+        <canvas id="grow-cv"></canvas>
+      </div>
+      <div class="rvr">
+        <div class="sh">
+          <span class="stag" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+          <h2 data-en="How to <em>grow with us</em>" data-es="Cómo <em>crecer con nosotros</em>">How to <em>grow with us</em></h2>
+        </div>
+        <p class="grow-txt" data-en="A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage." data-es="Un proceso probado de 5 pasos que lleva tu marca de donde está a donde merece estar.">A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage.</p>
+        <div class="gsteps">
+          <div class="gstep rv d1"><div class="gnum">1</div><div><div class="gstep-t" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div><div class="gstep-p" data-en="Brand audit, objectives, and tailored strategic action plan." data-es="Auditoría de marca, objetivos y plan estratégico personalizado.">Brand audit, objectives, and tailored strategic action plan.</div></div></div>
+          <div class="gstep rv d2"><div class="gnum">2</div><div><div class="gstep-t" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div><div class="gstep-p" data-en="Visuals, copywriting, and SEO content production." data-es="Visuales, redacción y producción de contenido SEO.">Visuals, copywriting, and SEO content production.</div></div></div>
+          <div class="gstep rv d3"><div class="gnum">3</div><div><div class="gstep-t" data-en="Activation" data-es="Activación">Activation</div><div class="gstep-p" data-en="Publication, newsletters, and full ad campaign launch." data-es="Publicación, newsletters y lanzamiento de campañas.">Publication, newsletters, and full ad campaign launch.</div></div></div>
+          <div class="gstep rv d4"><div class="gnum">4</div><div><div class="gstep-t" data-en="Monitoring & Optimization" data-es="Monitoreo y Optimización">Monitoring & Optimization</div><div class="gstep-p" data-en="KPI tracking, A/B testing, and monthly performance reports." data-es="Seguimiento de KPI, pruebas A/B e informes mensuales.">KPI tracking, A/B testing, and monthly performance reports.</div></div></div>
+          <div class="gstep rv d5"><div class="gnum">5</div><div><div class="gstep-t" data-en="Results Delivered" data-es="Resultados Entregados">Results Delivered</div><div class="gstep-p" data-en="Conversions, qualified leads, and measurable growth." data-es="Conversiones, leads calificados y crecimiento medible.">Conversions, qualified leads, and measurable growth.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+  <div class="ct">
+    <div class="sh c rv">
+      <span class="stag" data-en="Pricing" data-es="Precios">Pricing</span>
+      <h2 data-en="Simple, transparent <em>pricing</em>" data-es="Precios simples y <em>transparentes</em>">Simple, transparent <em>pricing</em></h2>
+      <p data-en="No hidden fees. No surprises. Just results." data-es="Sin cargos ocultos. Sin sorpresas. Solo resultados.">No hidden fees. No surprises. Just results.</p>
+    </div>
+    <div class="prg">
+      <div class="prc rv d1">
+        <div class="pname" data-en="Starter" data-es="Starter">Starter</div>
+        <div class="ptag" data-en="Online visibility for emerging brands" data-es="Visibilidad para marcas emergentes">Online visibility for emerging brands</div>
+        <div class="pval"><span class="pval-col">$800</span></div>
+        <div class="pper" data-en="/ month" data-es="/ mes">/ month</div>
+        <ul class="pfeats">
+          <li data-en="Digital presence audit" data-es="Auditoría digital">Digital presence audit</li>
+          <li data-en="Moodboard + strategic recommendations" data-es="Moodboard + recomendaciones">Moodboard + strategic recommendations</li>
+          <li data-en="8 publications / month" data-es="8 publicaciones / mes">8 publications / month</li>
+          <li data-en="Publication scheduling" data-es="Programación">Publication scheduling</li>
+          <li data-en="Monthly performance report" data-es="Informe mensual">Monthly performance report</li>
+        </ul>
+        <button class="pbtn g" onclick="openM()" data-en="Get Started" data-es="Comenzar">Get Started</button>
+      </div>
+      <div class="prc hot rv d2">
+        <div class="phot" data-en="⭐ Most Popular" data-es="⭐ Más Popular">⭐ Most Popular</div>
+        <div class="pname" data-en="Launch" data-es="Launch">Launch</div>
+        <div class="ptag" data-en="Launch & Conversion — 5-6 weeks" data-es="Lanzamiento y Conversión">Launch & Conversion — 5-6 weeks</div>
+        <div class="pval-hot">$2,700</div>
+        <div class="pper" data-en="/ project" data-es="/ proyecto">/ project</div>
+        <ul class="pfeats">
+          <li data-en="Content strategy + calendar" data-es="Estrategia + calendario">Content strategy + calendar</li>
+          <li data-en="22 publications / month" data-es="22 publicaciones / mes">22 publications / month</li>
+          <li data-en="Community management" data-es="Gestión comunitaria">Community management</li>
+          <li data-en="2 newsletters / month" data-es="2 newsletters / mes">2 newsletters / month</li>
+          <li data-en="1 ad campaign managed" data-es="1 campaña gestionada">1 ad campaign managed</li>
+        </ul>
+        <button class="pbtn s" onclick="openM()" data-en="Start Now" data-es="Empezar Ahora">Start Now</button>
+      </div>
+      <div class="prc rv d3">
+        <div class="pname" data-en="Premium" data-es="Premium">Premium</div>
+        <div class="ptag" data-en="Custom 360° premium full-service" data-es="Servicio completo premium 360°">Custom 360° premium full-service</div>
+        <div class="pval"><span class="pval-col">$5,400</span></div>
+        <div class="pper" data-en="/ project" data-es="/ proyecto">/ project</div>
+        <ul class="pfeats">
+          <li data-en="Custom 360° digital campaign" data-es="Campaña digital 360°">Custom 360° digital campaign</li>
+          <li data-en="Artistic direction + moodboard" data-es="Dirección artística + moodboard">Artistic direction + moodboard</li>
+          <li data-en="15 visuals + 3 ad formats" data-es="15 visuales + 3 formatos">15 visuals + 3 ad formats</li>
+          <li data-en="2 newsletters + landing page" data-es="2 newsletters + landing page">2 newsletters + landing page</li>
+          <li data-en="Premium priority support" data-es="Soporte prioritario">Premium priority support</li>
+        </ul>
+        <button class="pbtn g" onclick="openM()" data-en="Get Started" data-es="Comenzar">Get Started</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sec bg" id="industries">
+  <div class="ct">
+    <div class="sh c rv">
+      <span class="stag" data-en="Industries" data-es="Industrias">Industries</span>
+      <h2 data-en="We speak <em>every industry</em>" data-es="Hablamos <em>cada industria</em>">We speak <em>every industry</em></h2>
+    </div>
+    <div class="ig">
+      <div class="ic rv d1"><span class="iico">💄</span><h4 data-en="Beauty" data-es="Belleza">Beauty</h4><p data-en="Cosmetics, skincare, fragrances" data-es="Cosméticos, cuidado de piel">Cosmetics, skincare, fragrances</p></div>
+      <div class="ic rv d2"><span class="iico">🧘</span><h4 data-en="Wellness" data-es="Bienestar">Wellness</h4><p data-en="Spa, yoga, holistic health" data-es="Spa, yoga, salud holística">Spa, yoga, holistic health</p></div>
+      <div class="ic rv d3"><span class="iico">🏨</span><h4 data-en="Hospitality" data-es="Hostelería">Hospitality</h4><p data-en="Hotels, resorts, riads" data-es="Hoteles, resorts, riads">Hotels, resorts, riads</p></div>
+      <div class="ic rv d4"><span class="iico">👗</span><h4 data-en="Fashion" data-es="Moda">Fashion</h4><p data-en="Clothing, accessories" data-es="Ropa, accesorios">Clothing, accessories</p></div>
+      <div class="ic rv d5"><span class="iico">🍽️</span><h4 data-en="Food & Drink" data-es="Comida y Bebida">Food & Drink</h4><p data-en="Restaurants, cafés, F&B" data-es="Restaurantes, cafés">Restaurants, cafés, F&B</p></div>
+      <div class="ic rv d6"><span class="iico">✨</span><h4 data-en="Lifestyle" data-es="Lifestyle">Lifestyle</h4><p data-en="Premium lifestyle brands" data-es="Marcas premium">Premium lifestyle brands</p></div>
+      <div class="ic rv d7"><span class="iico">🏢</span><h4 data-en="Real Estate" data-es="Bienes Raíces">Real Estate</h4><p data-en="Property, luxury homes" data-es="Propiedades, casas de lujo">Property, luxury homes</p></div>
+      <div class="ic rv d8"><span class="iico">🛒</span><h4 data-en="E-commerce" data-es="E-commerce">E-commerce</h4><p data-en="Online shops, D2C brands" data-es="Tiendas online, D2C">Online shops, D2C brands</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="ct">
+    <div class="sh rv">
+      <span class="stag" data-en="FAQ" data-es="FAQ">FAQ</span>
+      <h2 data-en="Frequently asked <em>questions</em>" data-es="Preguntas <em>frecuentes</em>">Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="fl">
+      <div class="fi rv d1"><button class="fq" onclick="faq(this)"><span data-en="What makes Verto Media Global different?" data-es="¿Qué hace diferente a Verto Media Global?">What makes Verto Media Global different?</span><span class="fic">+</span></button><div class="fa" data-en="We combine multilingual expertise (6 languages) with data-driven strategy and creative production — building campaigns designed to convert across every touchpoint." data-es="Combinamos experiencia multilingüe (6 idiomas) con estrategia basada en datos y producción creativa.">We combine multilingual expertise (6 languages) with data-driven strategy and creative production — building campaigns designed to convert across every touchpoint.</div></div>
+      <div class="fi rv d2"><button class="fq" onclick="faq(this)"><span data-en="How long does it take to see results?" data-es="¿Cuánto tiempo tarda en ver resultados?">How long does it take to see results?</span><span class="fic">+</span></button><div class="fa" data-en="For organic growth (SEO, social), expect meaningful results within 60-90 days. For paid campaigns, you'll see initial data within the first 2 weeks." data-es="Para crecimiento orgánico, espera resultados en 60-90 días. Para campañas de pago, verás datos en 2 semanas.">For organic growth (SEO, social), expect meaningful results within 60-90 days. For paid campaigns, you'll see initial data within the first 2 weeks.</div></div>
+      <div class="fi rv d3"><button class="fq" onclick="faq(this)"><span data-en="Which languages do you operate in?" data-es="¿En qué idiomas operan?">Which languages do you operate in?</span><span class="fic">+</span></button><div class="fa" data-en="We create and manage content in English, Spanish, French, German, Italian, and Arabic — with native-level proficiency in each." data-es="Creamos y gestionamos contenido en inglés, español, francés, alemán, italiano y árabe.">We create and manage content in English, Spanish, French, German, Italian, and Arabic — with native-level proficiency in each.</div></div>
+      <div class="fi rv d4"><button class="fq" onclick="faq(this)"><span data-en="Can I start with one service and scale up?" data-es="¿Puedo empezar con un servicio y escalar?">Can I start with one service and scale up?</span><span class="fic">+</span></button><div class="fa" data-en="Absolutely. Many clients begin with our Starter package or a single service, then scale up to full 360° campaigns as results grow." data-es="Absolutamente. Muchos clientes comienzan con el Starter y escalan a campañas 360° a medida que crecen los resultados.">Absolutely. Many clients begin with our Starter package or a single service, then scale up to full 360° campaigns as results grow.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctasec" id="cta">
+  <div class="ctabox rv">
+    <h2 data-en="Ready to grow your brand globally?" data-es="¿Listo para hacer crecer tu marca globalmente?">Ready to grow your brand globally?</h2>
+    <p data-en="Join ambitious brands already scaling with Verto Media Global." data-es="Únete a marcas ambiciosas que ya escalan con Verto Media Global.">Join ambitious brands already scaling with Verto Media Global.</p>
+    <div class="ctabtns">
+      <button class="bp-w" onclick="openM()" data-en="🚀 Start Your Campaign" data-es="🚀 Empieza Tu Campaña">🚀 Start Your Campaign</button>
+      <a href="https://wa.me/212691396908" target="_blank" class="bo-w" data-en="💬 WhatsApp Us" data-es="💬 WhatsApp">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ct">
+    <div class="ftg">
+      <div class="fb">
+        <img src="https://i.postimg.cc/25ZwMQNh/logo-k7al-jaadida.png" alt="Verto Media Global">
+        <p data-en="International digital marketing agency. Casablanca, Morocco. Serving brands globally in 6 languages." data-es="Agencia de marketing digital. Casablanca, Marruecos. Sirviendo marcas en 6 idiomas.">International digital marketing agency. Casablanca, Morocco. Serving brands globally in 6 languages.</p>
+        <div class="socs">
+          <a href="https://web.facebook.com/profile.php?id=100083970673105" class="soc" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/agen.cydigitalmarketingena" class="soc" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.linkedin.com/in/verto-media-global-aa79b4391/" class="soc" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://t.me/+212691396908" class="soc" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h4 data-en="Services" data-es="Servicios">Services</h4><ul><li><a href="#services" data-en="Email Marketing" data-es="Email Marketing">Email Marketing</a></li><li><a href="#services" data-en="Digital Strategy" data-es="Estrategia Digital">Digital Strategy</a></li><li><a href="#services" data-en="SEO & Visibility" data-es="SEO">SEO & Visibility</a></li><li><a href="#services" data-en="Social Media" data-es="Redes Sociales">Social Media</a></li><li><a href="#services" data-en="Paid Advertising" data-es="Publicidad">Paid Advertising</a></li></ul></div>
+      <div class="fcol"><h4 data-en="Company" data-es="Empresa">Company</h4><ul><li><a href="#about" data-en="About Us" data-es="Nosotros">About Us</a></li><li><a href="#process" data-en="How It Works" data-es="Cómo Funciona">How It Works</a></li><li><a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a></li><li><a href="#industries" data-en="Industries" data-es="Industrias">Industries</a></li><li><a href="#faq" data-en="FAQ" data-es="FAQ">FAQ</a></li></ul></div>
+      <div class="fcol"><h4 data-en="Contact" data-es="Contacto">Contact</h4><ul><li><a href="mailto:vertomediaglobal@gmail.com">vertomediaglobal@gmail.com</a></li><li><a href="https://wa.me/212691396908" target="_blank">+212 691-396908</a></li><li><a data-en="Casablanca, Morocco" data-es="Casablanca, Marruecos">Casablanca, Morocco</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p data-en="© 2025 Verto Media Global. All rights reserved." data-es="© 2025 Verto Media Global. Todos los derechos reservados.">© 2025 Verto Media Global. All rights reserved.</p>
+      <p>EN · ES · FR · DE · IT · AR</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WA -->
+<a href="https://wa.me/212691396908" class="wa" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- MODAL -->
+<div class="mbg" id="mbg" onclick="cOut(event)">
+  <div class="mb">
+    <button class="mx" onclick="closeM()">✕</button>
+    <h3 data-en="Let's work together" data-es="Trabajemos juntos">Let's work together</h3>
+    <p class="msub" data-en="Choose your preferred contact method" data-es="Elige tu método de contacto">Choose your preferred contact method</p>
+    <div class="mts">
+      <button class="mt on" onclick="tab('wa')" id="twa"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</button>
+      <button class="mt" onclick="tab('em')" id="tem"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg> <span data-en="Email" data-es="Email">Email</span></button>
+    </div>
+    <div class="mp on" id="pwa">
+      <div class="fg2"><label data-en="Your Name" data-es="Tu Nombre">Your Name</label><input type="text" id="wn" placeholder="John Smith"></div>
+      <div class="fg2"><label data-en="Interested Service" data-es="Servicio">Interested Service</label><select id="ws"><option>Select a service...</option><option>Email Marketing</option><option>Digital Strategy</option><option>Performance Analytics</option><option>Content Creation</option><option>SEO & Visibility</option><option>Social Media Management</option><option>Paid Advertising</option><option>Branding & Identity</option><option>Video Marketing</option><option>Full Package</option></select></div>
+      <div class="fg2"><label data-en="Your Message" data-es="Tu Mensaje">Your Message</label><textarea id="wm" placeholder="Tell us about your brand..."></textarea></div>
+      <button class="msend" onclick="sendWA()" data-en="📲 Send via WhatsApp" data-es="📲 Enviar por WhatsApp">📲 Send via WhatsApp</button>
+    </div>
+    <div class="mp" id="pem">
+      <div class="fg2"><label data-en="Your Name" data-es="Tu Nombre">Your Name</label><input type="text" id="en2"></div>
+      <div class="fg2"><label data-en="Your Email" data-es="Tu Email">Your Email</label><input type="email" id="ef"></div>
+      <div class="fg2"><label data-en="Interested Service" data-es="Servicio">Interested Service</label><select id="es2"><option>Select...</option><option>Email Marketing</option><option>Digital Strategy</option><option>Performance Analytics</option><option>Content Creation</option><option>SEO & Visibility</option><option>Social Media Management</option><option>Paid Advertising</option><option>Branding & Identity</option><option>Video Marketing</option><option>Full Package</option></select></div>
+      <div class="fg2"><label data-en="Your Message" data-es="Tu Mensaje">Your Message</label><textarea id="em2" placeholder="Tell us about your brand..."></textarea></div>
+      <button class="msend" id="esub" onclick="sendEmail()" data-en="📧 Send Email" data-es="📧 Enviar Email">📧 Send Email</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* GROW CANVAS 3D */
+(function(){
+  const cv=document.getElementById('grow-cv');
+  if(!cv)return;
+  const cx=cv.getContext('2d');
+  let W,H;
+  function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+  rz();
+  const nodes=Array.from({length:40},()=>({
+    x:Math.random()*100,y:Math.random()*100,z:Math.random()*100,
+    vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,vz:(Math.random()-.5)*.08
+  }));
+  function proj(x,y,z){
+    const f=120,d=f/(f+z);
+    return{px:(x-50)*d*W/100+W/2,py:(y-50)*d*H/100+H/2,d};
+  }
+  function frame(){
+    rz();cx.clearRect(0,0,W,H);
+    nodes.forEach(n=>{
+      n.x+=n.vx;n.y+=n.vy;n.z+=n.vz;
+      if(n.x<0||n.x>100)n.vx*=-1;
+      if(n.y<0||n.y>100)n.vy*=-1;
+      if(n.z<0||n.z>100)n.vz*=-1;
+    });
+    nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{
+      const dist=Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z);
+      if(dist<25){
+        const pa=proj(a.x,a.y,a.z),pb=proj(b.x,b.y,b.z);
+        cx.beginPath();cx.moveTo(pa.px,pa.py);cx.lineTo(pb.px,pb.py);
+        cx.strokeStyle=`rgba(99,102,241,${.18*(1-dist/25)})`;cx.lineWidth=.7;cx.stroke();
+      }
+    }));
+    nodes.forEach(n=>{
+      const p=proj(n.x,n.y,n.z);
+      cx.beginPath();cx.arc(p.px,p.py,p.d*2.2,0,Math.PI*2);
+      cx.fillStyle=`rgba(99,102,241,${p.d*.5})`;cx.fill();
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* LANG */
+function L(l){
+  localStorage.setItem('vl',l);
+  document.querySelectorAll('.lb').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.lb').forEach(b=>{if(b.textContent.trim().toLowerCase()===l)b.classList.add('on')});
+  document.querySelectorAll('[data-en]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v)el.innerHTML=v});
+}
+L(localStorage.getItem('vl')||'en');
+
+/* MOBILE */
+function mobT(){document.getElementById('mob').classList.toggle('o');document.getElementById('hbg').classList.toggle('o')}
+
+/* MODAL */
+function openM(){document.getElementById('mbg').classList.add('open');document.body.style.overflow='hidden'}
+function closeM(){document.getElementById('mbg').classList.remove('open');document.body.style.overflow=''}
+function cOut(e){if(e.target===document.getElementById('mbg'))closeM()}
+function tab(t){
+  document.querySelectorAll('.mt').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.mp').forEach(p=>p.classList.remove('on'));
+  document.getElementById('t'+t).classList.add('on');
+  document.getElementById('p'+t).classList.add('on');
+}
+
+/* WA */
+function sendWA(){
+  const n=document.getElementById('wn').value||'a potential client';
+  const s=document.getElementById('ws').value;
+  const m=document.getElementById('wm').value;
+  const txt=encodeURIComponent('Hello Verto Media Global! 👋\n\nMy name is '+n+'.\n'+(s.includes('Select')?'':('Interested in: '+s+'\n'))+(m?'\nMessage: '+m:''));
+  window.open('https://wa.me/212617499697?text='+txt,'_blank');
+  closeM();
+}
+
+/* EMAIL Web3Forms */
+async function sendEmail(){
+  const n=document.getElementById('en2').value;
+  const f=document.getElementById('ef').value;
+  const s=document.getElementById('es2').value;
+  const m=document.getElementById('em2').value;
+  const btn=document.getElementById('esub');
+  if(!n||!f||!m){btn.textContent='⚠️ Fill all fields';setTimeout(()=>{btn.textContent='📧 Send Email'},2e3);return}
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const fd=new FormData();
+    fd.append('access_key','875dfd7d-22eb-4f9a-8222-e5527180955b');
+    fd.append('name',n);fd.append('email',f);
+    fd.append('subject','Verto Media — New inquiry from '+n);
+    fd.append('service',s);fd.append('message',m);
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+    const data=await r.json();
+    if(data.success){btn.textContent='✅ Sent!';btn.style.background='#10b981';setTimeout(()=>{closeM();btn.textContent='📧 Send Email';btn.style.background='';btn.disabled=false},2e3)}
+    else throw 0;
+  }catch{btn.textContent='❌ Error — try WhatsApp';btn.style.background='#ef4444';setTimeout(()=>{btn.textContent='📧 Send Email';btn.style.background='';btn.disabled=false},3e3)}
+}
+
+/* REVEAL */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:0});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>obs.observe(el));
+setTimeout(()=>{document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('in')})},60);
+
+/* COUNTERS */
+function cnt(el,t){const d=1500,s=performance.now();const r=n=>{const p=Math.min((n-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent='+'+Math.floor(e*t);if(p<1)requestAnimationFrame(r);else el.textContent='+'+t};requestAnimationFrame(r)}
+const co=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&x.target.dataset.count){cnt(x.target,+x.target.dataset.count);co.unobserve(x.target)}})},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* FAQ */
+function faq(b){const i=b.closest('.fi');const o=i.classList.contains('on');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('on'));if(!o)i.classList.add('on')}
+
+/* ESC */
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+</script>
+</body>
+</html>
