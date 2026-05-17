@@ -845,89 +845,126 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 <!-- HOW TO GROW -->
 <section class="sec bg" id="process">
   <div class="ct">
-    <div class="grow-grid">
-      <div class="grow-visual rvl" style="position:relative;height:420px;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#eef2ff,#e0e7ff,#dbeafe);box-shadow:0 24px 60px rgba(79,70,229,.12)">
-        <canvas id="grow-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
-        <!-- Floating metric cards -->
-        <div style="position:absolute;top:24px;left:24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.15);border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:flt1 4s ease-in-out infinite">
-          <div style="font-size:11px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Traffic Growth</div>
-          <div style="font-size:22px;font-weight:800;color:var(--p);margin-top:2px">+125%</div>
-          <div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">↑ 23% this month</div>
-        </div>
-        <div style="position:absolute;bottom:24px;right:24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.15);border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:flt2 5s ease-in-out infinite">
-          <div style="font-size:11px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Average ROI</div>
-          <div style="font-size:22px;font-weight:800;color:var(--cyan);margin-top:2px">+487%</div>
-          <div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">↑ 41% this quarter</div>
-        </div>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border:1px solid rgba(79,70,229,.2);border-radius:16px;padding:16px 22px;text-align:center;box-shadow:0 12px 32px rgba(79,70,229,.15);animation:flt3 6s ease-in-out infinite">
-          <div style="font-size:10px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Qualified Leads</div>
-          <div style="font-size:28px;font-weight:800;color:var(--dark)">350<span style="color:var(--p)">+</span></div>
-          <div style="display:flex;gap:4px;justify-content:center;margin-top:6px">
-            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s infinite"></div>
-            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s .3s infinite"></div>
-            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s .6s infinite"></div>
-          </div>
-        </div>
-        <style>
-          @keyframes flt1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-          @keyframes flt2{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-          @keyframes flt3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.02)}}
-          @keyframes ldot{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
-        </style>
-        <script>
-        (function(){
-          const cv=document.getElementById('grow-cv');
-          if(!cv)return;
-          const cx=cv.getContext('2d');
-          let W,H;
-          function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
-          rz();
-          const nodes=Array.from({length:35},()=>({
-            x:Math.random()*100,y:Math.random()*100,
-            vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,
-            r:Math.random()*2.5+1
-          }));
-          function frame(){
-            rz();cx.clearRect(0,0,W,H);
-            nodes.forEach(n=>{
-              n.x+=n.vx;n.y+=n.vy;
-              if(n.x<0||n.x>100)n.vx*=-1;
-              if(n.y<0||n.y>100)n.vy*=-1;
-            });
-            nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{
-              const d=Math.hypot(a.x-b.x,a.y-b.y);
-              if(d<22){
-                cx.beginPath();
-                cx.moveTo(a.x*W/100,a.y*H/100);
-                cx.lineTo(b.x*W/100,b.y*H/100);
-                cx.strokeStyle=`rgba(79,70,229,${.15*(1-d/22)})`;
-                cx.lineWidth=1;cx.stroke();
-              }
-            }));
-            nodes.forEach(n=>{
-              cx.beginPath();
-              cx.arc(n.x*W/100,n.y*H/100,n.r,0,Math.PI*2);
-              cx.fillStyle='rgba(79,70,229,.35)';cx.fill();
-            });
-            requestAnimationFrame(frame);
-          }
-          frame();
-        })();
-        </script>
-      </div>
-      <div class="rvr">
-        <div class="sh">
-          <span class="stag" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
-          <h2 data-en="How to <em>grow with us</em>" data-es="Cómo <em>crecer con nosotros</em>">How to <em>grow with us</em></h2>
-        </div>
-        <p style="color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:24px" data-en="A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage." data-es="Un proceso probado de 5 pasos que lleva tu marca de donde está a donde merece estar.">A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage.</p>
+    <div style="text-align:center;margin-bottom:52px" class="rv">
+      <span class="stag" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+      <h2 class="sh" style="margin-bottom:0" data-en="How to <em>grow with us</em>" data-es="Cómo <em>crecer con nosotros</em>">How to <em>grow with us</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+      <!-- Steps left -->
+      <div>
         <div class="gsteps">
-          <div class="gstep rv d1"><div class="gnum">1</div><div><div class="gstep-t" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div><div class="gstep-p" data-en="Brand audit, objectives, and tailored strategic action plan." data-es="Auditoría de marca, objetivos y plan estratégico personalizado.">Brand audit, objectives, and tailored strategic action plan.</div></div></div>
+          <div class="gstep rv d1"><div class="gnum">1</div><div><div class="gstep-t" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div><div class="gstep-p" data-en="Brand audit, objectives, and tailored strategic action plan." data-es="Auditoría de marca, objetivos y plan estratégico.">Brand audit, objectives, and tailored strategic action plan.</div></div></div>
           <div class="gstep rv d2"><div class="gnum">2</div><div><div class="gstep-t" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div><div class="gstep-p" data-en="Visuals, copywriting, and SEO content production." data-es="Visuales, redacción y producción de contenido SEO.">Visuals, copywriting, and SEO content production.</div></div></div>
           <div class="gstep rv d3"><div class="gnum">3</div><div><div class="gstep-t" data-en="Activation" data-es="Activación">Activation</div><div class="gstep-p" data-en="Publication, newsletters, and full ad campaign launch." data-es="Publicación, newsletters y lanzamiento de campañas.">Publication, newsletters, and full ad campaign launch.</div></div></div>
           <div class="gstep rv d4"><div class="gnum">4</div><div><div class="gstep-t" data-en="Monitoring & Optimization" data-es="Monitoreo y Optimización">Monitoring & Optimization</div><div class="gstep-p" data-en="KPI tracking, A/B testing, and monthly performance reports." data-es="Seguimiento de KPI, pruebas A/B e informes mensuales.">KPI tracking, A/B testing, and monthly performance reports.</div></div></div>
           <div class="gstep rv d5"><div class="gnum">5</div><div><div class="gstep-t" data-en="Results Delivered" data-es="Resultados Entregados">Results Delivered</div><div class="gstep-p" data-en="Conversions, qualified leads, and measurable growth." data-es="Conversiones, leads calificados y crecimiento medible.">Conversions, qualified leads, and measurable growth.</div></div></div>
         </div>
+      </div>
+      <!-- Visual right: Orbit animation -->
+      <div class="rvr" style="position:relative;height:420px;display:flex;align-items:center;justify-content:center">
+        <canvas id="orbit-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+        <!-- Center badge -->
+        <div style="position:relative;z-index:2;text-align:center;background:rgba(255,255,255,.95);border:1.5px solid rgba(79,70,229,.2);border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(79,70,229,.18);animation:cpulse 3s ease-in-out infinite">
+          <div style="font-size:28px;font-weight:800;color:#4f46e5;line-height:1">5</div>
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Steps</div>
+        </div>
+        <!-- Orbit labels -->
+        <div id="orb-labels" style="position:absolute;inset:0;z-index:2"></div>
+        <style>
+          @keyframes cpulse{0%,100%{box-shadow:0 12px 40px rgba(79,70,229,.18),0 0 0 0 rgba(79,70,229,.15)}50%{box-shadow:0 12px 40px rgba(79,70,229,.25),0 0 0 16px rgba(79,70,229,.04)}}
+        </style>
+        <script>
+        (function(){
+          const cv=document.getElementById('orbit-cv');
+          if(!cv)return;
+          const cx=cv.getContext('2d');
+          let W,H,t=0;
+          function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+          rz();
+
+          const steps=[
+            {label:'Strategy',icon:'🎯',color:'#4f46e5'},
+            {label:'Content',icon:'🎨',color:'#06b6d4'},
+            {label:'Activation',icon:'🚀',color:'#10b981'},
+            {label:'Monitoring',icon:'📊',color:'#f59e0b'},
+            {label:'Results',icon:'🏆',color:'#ec4899'},
+          ];
+
+          const lblContainer=document.getElementById('orb-labels');
+          const lblEls=steps.map((s,i)=>{
+            const d=document.createElement('div');
+            d.style.cssText='position:absolute;background:rgba(255,255,255,.95);border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:8px 12px;text-align:center;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:transform .1s';
+            d.innerHTML=`<div style="font-size:16px">${s.icon}</div><div style="font-size:10px;font-weight:700;color:${s.color};margin-top:2px">${s.label}</div>`;
+            lblContainer.appendChild(d);
+            return d;
+          });
+
+          function frame(){
+            rz();t+=.008;
+            cx.clearRect(0,0,W,H);
+            const cx2=W/2,cy2=H/2;
+            const r1=Math.min(W,H)*.32;
+            const r2=Math.min(W,H)*.2;
+
+            /* Draw orbit rings */
+            cx.beginPath();cx.arc(cx2,cy2,r1,0,Math.PI*2);
+            cx.strokeStyle='rgba(79,70,229,.1)';cx.lineWidth=1;cx.setLineDash([6,8]);cx.stroke();cx.setLineDash([]);
+            cx.beginPath();cx.arc(cx2,cy2,r2,0,Math.PI*2);
+            cx.strokeStyle='rgba(6,182,212,.08)';cx.lineWidth=1;cx.setLineDash([4,10]);cx.stroke();cx.setLineDash([]);
+
+            /* Orbiting dots trail */
+            for(let i=0;i<steps.length;i++){
+              const angle=t+(i/steps.length)*Math.PI*2;
+              const x=cx2+Math.cos(angle)*r1;
+              const y=cy2+Math.sin(angle)*r1;
+
+              /* trail */
+              for(let j=1;j<=8;j++){
+                const ta=angle-(j*.06);
+                const tx=cx2+Math.cos(ta)*r1;
+                const ty=cy2+Math.sin(ta)*r1;
+                cx.beginPath();cx.arc(tx,ty,3*(1-j/8),0,Math.PI*2);
+                cx.fillStyle=`rgba(79,70,229,${.15*(1-j/8)})`;cx.fill();
+              }
+
+              /* main dot */
+              cx.beginPath();cx.arc(x,y,7,0,Math.PI*2);
+              cx.fillStyle=steps[i].color;cx.fill();
+              cx.beginPath();cx.arc(x,y,11,0,Math.PI*2);
+              cx.fillStyle=steps[i].color.replace(')',',0.15)').replace('rgb','rgba');cx.fill();
+
+              /* position label */
+              const lx=cx2+Math.cos(angle)*r1*1.55;
+              const ly=cy2+Math.sin(angle)*r1*1.55;
+              const el=lblEls[i];
+              const ew=el.offsetWidth||80,eh=el.offsetHeight||48;
+              el.style.left=(lx-ew/2)+'px';
+              el.style.top=(ly-eh/2)+'px';
+            }
+
+            /* Inner counter-orbit */
+            for(let i=0;i<3;i++){
+              const angle=-t*1.5+(i/3)*Math.PI*2;
+              const x=cx2+Math.cos(angle)*r2;
+              const y=cy2+Math.sin(angle)*r2;
+              cx.beginPath();cx.arc(x,y,4,0,Math.PI*2);
+              cx.fillStyle='rgba(6,182,212,.5)';cx.fill();
+            }
+
+            /* Connecting lines from center to dots */
+            steps.forEach((_,i)=>{
+              const angle=t+(i/steps.length)*Math.PI*2;
+              const x=cx2+Math.cos(angle)*r1;
+              const y=cy2+Math.sin(angle)*r1;
+              cx.beginPath();cx.moveTo(cx2,cy2);cx.lineTo(x,y);
+              cx.strokeStyle=`rgba(79,70,229,.06)`;cx.lineWidth=1;cx.stroke();
+            });
+
+            requestAnimationFrame(frame);
+          }
+          frame();
+        })();
+        </script>
       </div>
     </div>
   </div>
