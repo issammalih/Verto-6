@@ -809,15 +809,81 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 <section class="sec bg" id="process">
   <div class="ct">
     <div class="grow-grid">
-      <div class="grow-canvas-box rvl">
-        <canvas id="grow-cv"></canvas>
+      <div class="grow-visual rvl" style="position:relative;height:420px;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#eef2ff,#e0e7ff,#dbeafe);box-shadow:0 24px 60px rgba(79,70,229,.12)">
+        <canvas id="grow-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+        <!-- Floating metric cards -->
+        <div style="position:absolute;top:24px;left:24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.15);border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:flt1 4s ease-in-out infinite">
+          <div style="font-size:11px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Traffic Growth</div>
+          <div style="font-size:22px;font-weight:800;color:var(--p);margin-top:2px">+125%</div>
+          <div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">↑ 23% this month</div>
+        </div>
+        <div style="position:absolute;bottom:24px;right:24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid rgba(79,70,229,.15);border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(79,70,229,.1);animation:flt2 5s ease-in-out infinite">
+          <div style="font-size:11px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Average ROI</div>
+          <div style="font-size:22px;font-weight:800;color:var(--cyan);margin-top:2px">+487%</div>
+          <div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">↑ 41% this quarter</div>
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border:1px solid rgba(79,70,229,.2);border-radius:16px;padding:16px 22px;text-align:center;box-shadow:0 12px 32px rgba(79,70,229,.15);animation:flt3 6s ease-in-out infinite">
+          <div style="font-size:10px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Qualified Leads</div>
+          <div style="font-size:28px;font-weight:800;color:var(--dark)">350<span style="color:var(--p)">+</span></div>
+          <div style="display:flex;gap:4px;justify-content:center;margin-top:6px">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s infinite"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s .3s infinite"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--p);animation:ldot 1.5s .6s infinite"></div>
+          </div>
+        </div>
+        <style>
+          @keyframes flt1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+          @keyframes flt2{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+          @keyframes flt3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.02)}}
+          @keyframes ldot{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+        </style>
+        <script>
+        (function(){
+          const cv=document.getElementById('grow-cv');
+          if(!cv)return;
+          const cx=cv.getContext('2d');
+          let W,H;
+          function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+          rz();
+          const nodes=Array.from({length:35},()=>({
+            x:Math.random()*100,y:Math.random()*100,
+            vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,
+            r:Math.random()*2.5+1
+          }));
+          function frame(){
+            rz();cx.clearRect(0,0,W,H);
+            nodes.forEach(n=>{
+              n.x+=n.vx;n.y+=n.vy;
+              if(n.x<0||n.x>100)n.vx*=-1;
+              if(n.y<0||n.y>100)n.vy*=-1;
+            });
+            nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{
+              const d=Math.hypot(a.x-b.x,a.y-b.y);
+              if(d<22){
+                cx.beginPath();
+                cx.moveTo(a.x*W/100,a.y*H/100);
+                cx.lineTo(b.x*W/100,b.y*H/100);
+                cx.strokeStyle=`rgba(79,70,229,${.15*(1-d/22)})`;
+                cx.lineWidth=1;cx.stroke();
+              }
+            }));
+            nodes.forEach(n=>{
+              cx.beginPath();
+              cx.arc(n.x*W/100,n.y*H/100,n.r,0,Math.PI*2);
+              cx.fillStyle='rgba(79,70,229,.35)';cx.fill();
+            });
+            requestAnimationFrame(frame);
+          }
+          frame();
+        })();
+        </script>
       </div>
       <div class="rvr">
         <div class="sh">
           <span class="stag" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
           <h2 data-en="How to <em>grow with us</em>" data-es="Cómo <em>crecer con nosotros</em>">How to <em>grow with us</em></h2>
         </div>
-        <p class="grow-txt" data-en="A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage." data-es="Un proceso probado de 5 pasos que lleva tu marca de donde está a donde merece estar.">A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage.</p>
+        <p style="color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:24px" data-en="A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage." data-es="Un proceso probado de 5 pasos que lleva tu marca de donde está a donde merece estar.">A proven 5-step process that takes your brand from where it is to where it deserves to be — with full transparency at every stage.</p>
         <div class="gsteps">
           <div class="gstep rv d1"><div class="gnum">1</div><div><div class="gstep-t" data-en="Analysis & Strategy" data-es="Análisis y Estrategia">Analysis & Strategy</div><div class="gstep-p" data-en="Brand audit, objectives, and tailored strategic action plan." data-es="Auditoría de marca, objetivos y plan estratégico personalizado.">Brand audit, objectives, and tailored strategic action plan.</div></div></div>
           <div class="gstep rv d2"><div class="gnum">2</div><div><div class="gstep-t" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div><div class="gstep-p" data-en="Visuals, copywriting, and SEO content production." data-es="Visuales, redacción y producción de contenido SEO.">Visuals, copywriting, and SEO content production.</div></div></div>
