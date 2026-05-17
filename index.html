@@ -674,66 +674,104 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 
 <!-- ABOUT -->
 <section class="sec bg" id="about">
- <div class="avis rvl" style="padding:28px;min-height:380px;background:var(--bg2);border:1.5px solid var(--border);border-radius:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 20px rgba(15,23,42,.06)">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:18px">
-      <div style="font-size:26px;font-weight:800;color:var(--dark)" id="av1">+0%</div>
-      <div style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Traffic Growth</div>
-      <div style="font-size:11px;color:var(--green);margin-top:5px;font-weight:600">↑ 23% this month</div>
-    </div>
-    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:18px">
-      <div style="font-size:26px;font-weight:800;color:var(--dark)" id="av2">+0%</div>
-      <div style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-top:4px">Average ROI</div>
-      <div style="font-size:11px;color:var(--green);margin-top:5px;font-weight:600">↑ 41% this quarter</div>
-    </div>
-  </div>
-  <div style="background:var(--w);border:1.5px solid var(--border);border-radius:14px;padding:16px;flex:1">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <span style="font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.08em">Campaign Performance</span>
-      <span style="display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:var(--green)"><span id="av-live" style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block"></span>LIVE</span>
-    </div>
-    <div style="display:flex;align-items:flex-end;gap:5px;height:64px" id="av-bars">
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb1"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb2"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb3"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb4"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--p),rgba(79,70,229,.3))" id="avb5"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(6,182,212,.3))" id="avb6"></div>
-      <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(6,182,212,.3))" id="avb7"></div>
-    </div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:9px">
-      <span style="font-size:18px">🌍</span>
-      <div><div style="font-size:12px;font-weight:700;color:var(--dark)">6 Languages</div><div style="font-size:10px;color:var(--text2)">EN ES FR DE IT AR</div></div>
-    </div>
-    <div style="background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:9px">
-      <span style="font-size:18px">⚡</span>
-      <div><div style="font-size:12px;font-weight:700;color:var(--dark)">350+ Leads</div><div style="font-size:10px;color:var(--text2)">Qualified monthly</div></div>
-    </div>
-  </div>
-</div>
+  <div class="ct">
+    <div class="ag">
+      <!-- VISUAL LEFT: 3D animated -->
+      <div class="rvl" style="position:relative;height:420px;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 40%,#dbeafe 100%);box-shadow:0 20px 50px rgba(79,70,229,.12)">
+        <canvas id="about-cv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+        <!-- Card top-left -->
+        <div style="position:absolute;top:22px;left:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid rgba(79,70,229,.15);border-radius:16px;padding:16px 20px;box-shadow:0 8px 28px rgba(79,70,229,.12);animation:afl1 4s ease-in-out infinite">
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.1em">Traffic Growth</div>
+          <div style="font-size:26px;font-weight:800;color:#4f46e5;margin-top:4px;line-height:1">+125%</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600;margin-top:4px">↑ 23% this month</div>
+        </div>
+        <!-- Card bottom-right -->
+        <div style="position:absolute;bottom:22px;right:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid rgba(6,182,212,.2);border-radius:16px;padding:16px 20px;box-shadow:0 8px 28px rgba(6,182,212,.15);animation:afl2 5s ease-in-out infinite">
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.1em">Average ROI</div>
+          <div style="font-size:26px;font-weight:800;color:#06b6d4;margin-top:4px;line-height:1">+487%</div>
+          <div style="font-size:11px;color:#10b981;font-weight:600;margin-top:4px">↑ 41% this quarter</div>
+        </div>
+        <!-- Center card -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border:1px solid rgba(79,70,229,.2);border-radius:18px;padding:18px 24px;text-align:center;box-shadow:0 14px 40px rgba(79,70,229,.15);animation:afl3 6s ease-in-out infinite;min-width:140px">
+          <div style="font-size:10px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Qualified Leads</div>
+          <div style="font-size:32px;font-weight:800;color:#0f172a;line-height:1">350<span style="color:#4f46e5">+</span></div>
+          <div style="display:flex;gap:5px;justify-content:center;margin-top:8px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#4f46e5;animation:apu 1.5s infinite"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:#4f46e5;animation:apu 1.5s .3s infinite"></div>
+            <div style="width:6px;height:6px;border-radius:50%;background:#4f46e5;animation:apu 1.5s .6s infinite"></div>
+          </div>
+        </div>
+        <!-- Live bar card bottom-left -->
+        <div style="position:absolute;bottom:22px;left:22px;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border:1px solid rgba(79,70,229,.12);border-radius:14px;padding:12px 16px;box-shadow:0 6px 20px rgba(79,70,229,.1);animation:afl1 7s ease-in-out infinite">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:20px">
+            <span style="font-size:9px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Performance</span>
+            <span style="font-size:9px;color:#10b981;font-weight:700;display:flex;align-items:center;gap:3px"><span id="ab-live" style="width:5px;height:5px;border-radius:50%;background:#10b981;display:inline-block"></span>LIVE</span>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:4px;height:32px">
+            <div id="abar1" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div id="abar2" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div id="abar3" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div id="abar4" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#818cf8,rgba(99,102,241,.2))"></div>
+            <div id="abar5" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2))"></div>
+            <div id="abar6" style="flex:1;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#67e8f9,rgba(6,182,212,.2))"></div>
+          </div>
+        </div>
+        <style>
+          @keyframes afl1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+          @keyframes afl2{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+          @keyframes afl3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.03)}}
+          @keyframes apu{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+        </style>
+        <script>
+        (function(){
+          const cv=document.getElementById('about-cv');
+          if(!cv)return;
+          const cx=cv.getContext('2d');
+          let W,H;
+          function rz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}
+          rz();
+          const nodes=Array.from({length:38},()=>({
+            x:Math.random()*100,y:Math.random()*100,
+            vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*2+1
+          }));
+          function frame(){
+            rz();cx.clearRect(0,0,W,H);
+            nodes.forEach(n=>{
+              n.x+=n.vx;n.y+=n.vy;
+              if(n.x<0||n.x>100)n.vx*=-1;
+              if(n.y<0||n.y>100)n.vy*=-1;
+            });
+            nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{
+              const d=Math.hypot(a.x-b.x,a.y-b.y);
+              if(d<20){
+                cx.beginPath();cx.moveTo(a.x*W/100,a.y*H/100);cx.lineTo(b.x*W/100,b.y*H/100);
+                cx.strokeStyle=`rgba(79,70,229,${.18*(1-d/20)})`;cx.lineWidth=.8;cx.stroke();
+              }
+            }));
+            nodes.forEach(n=>{
+              cx.beginPath();cx.arc(n.x*W/100,n.y*H/100,n.r,0,Math.PI*2);
+              cx.fillStyle='rgba(79,70,229,.3)';cx.fill();
+            });
+            requestAnimationFrame(frame);
+          }
+          frame();
+          const bt=[38,62,48,80,58,100],bc=[0,0,0,0,0,0];
+          const be=[document.getElementById('abar1'),document.getElementById('abar2'),document.getElementById('abar3'),document.getElementById('abar4'),document.getElementById('abar5'),document.getElementById('abar6')];
+          function animB(){bc.forEach((c,i)=>{bc[i]+=(bt[i]-c)*.08;if(be[i])be[i].style.height=Math.round(bc[i])+'%';});requestAnimationFrame(animB);}
+          animB();
+          setInterval(()=>{bt.forEach((_,i)=>{bt[i]=Math.round(25+Math.random()*75);});bt[5]=100;},2500);
+          let livOn=true;setInterval(()=>{const d=document.getElementById('ab-live');if(d){d.style.opacity=livOn?'.2':'1';livOn=!livOn;}},800);
+        })();
+        </script>
+      </div>
 
-<script>
-(function(){
-  const tgts=[42,64,50,78,58,88,100];
-  const cur=[0,0,0,0,0,0,0];
-  const bs=tgts.map((_,i)=>document.getElementById('avb'+(i+1)));
-  function animB(){cur.forEach((c,i)=>{const d=tgts[i]-c;cur[i]+=d*.08;if(bs[i])bs[i].style.height=Math.round(cur[i])+'%';});requestAnimationFrame(animB);}
-  animB();
-  setInterval(()=>{tgts.forEach((_,i)=>{tgts[i]=Math.round(30+Math.random()*70);});tgts[6]=100;},2800);
-  function ctr(el,t){const d=1400,s=performance.now();const r=n=>{const p=Math.min((n-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent='+'+Math.round(e*t)+'%';if(p<1)requestAnimationFrame(r);};requestAnimationFrame(r);}
-  const o=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){ctr(document.getElementById('av1'),125);ctr(document.getElementById('av2'),487);o.disconnect();}});},{threshold:.3});
-  o.observe(document.getElementById('av1'));
-  let on=true;setInterval(()=>{const d=document.getElementById('av-live');if(d){d.style.opacity=on?'.2':'1';on=!on;}},800);
-})();
-</script>
+      <!-- TEXT RIGHT -->
       <div class="rvr">
         <div class="sh">
           <span class="stag" data-en="About Us" data-es="Nosotros">About Us</span>
           <h2 data-en="We don't just market.<br><em>We build empires.</em>" data-es="No solo marketing.<br><em>Construimos imperios.</em>">We don't just market.<br><em>We build empires.</em></h2>
         </div>
-        <p class="atxt" data-en="Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert." data-es="Con sede en Casablanca, operando globalmente — Verto Media Global es una agencia de marketing digital multilingüe construida para marcas ambiciosas. Combinamos estrategia, creatividad y datos para campañas que realmente convierten.">Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert.</p>
+        <p style="color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:22px" data-en="Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert." data-es="Con sede en Casablanca, operando globalmente — Verto Media Global es una agencia de marketing digital multilingüe construida para marcas ambiciosas. Combinamos estrategia, creatividad y datos para campañas que realmente convierten.">Based in Casablanca, operating globally — Verto Media Global is a multilingual digital marketing agency built for ambitious brands. We combine strategy, creativity, and data to deliver campaigns that actually convert.</p>
         <div class="chips">
           <span class="chip" data-en="Strategic Thinking" data-es="Pensamiento Estratégico">Strategic Thinking</span>
           <span class="chip" data-en="Data-Driven" data-es="Basado en Datos">Data-Driven</span>
@@ -750,7 +788,6 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
     </div>
   </div>
 </section>
-
 <!-- SERVICES -->
 <section class="sec" id="services">
   <div class="ct">
