@@ -1402,7 +1402,205 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
   }
   </style>
 </section>
+<!-- SERVICES INTERACTIVE -->
+<section class="sec" id="services-int" style="overflow:hidden;position:relative">
+  <div style="position:absolute;inset:0;background:linear-gradient(160deg,#f8fafc 0%,#eef2ff 50%,#f8fafc 100%);pointer-events:none"></div>
+  <div class="ct" style="position:relative;z-index:1">
+    <div class="sh c rv">
+      <span class="stag" data-en="Our Expertise" data-es="Nuestra Experiencia">Our Expertise</span>
+      <h2 data-en="Pick a service. <em>See the impact.</em>" data-es="Elige un servicio. <em>Ve el impacto.</em>">Pick a service. <em>See the impact.</em></h2>
+      <p data-en="Click any service to explore what we deliver — with real numbers." data-es="Haz clic en cualquier servicio para explorar lo que entregamos.">Click any service to explore what we deliver — with real numbers.</p>
+    </div>
 
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:start" class="srv-int-grid">
+
+      <!-- LEFT: Service list -->
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="srv-tab active" data-srv="0" onclick="srvClick(this,0)">
+          <div class="srv-tab-ico" style="background:rgba(79,70,229,.1)">📧</div>
+          <div><div class="srv-tab-t" data-en="Email Marketing" data-es="Email Marketing">Email Marketing</div><div class="srv-tab-s" data-en="Automated campaigns that convert" data-es="Campañas automatizadas que convierten">Automated campaigns that convert</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+        <div class="srv-tab" data-srv="1" onclick="srvClick(this,1)">
+          <div class="srv-tab-ico" style="background:rgba(6,182,212,.1)">🔍</div>
+          <div><div class="srv-tab-t" data-en="SEO & Visibility" data-es="SEO y Visibilidad">SEO & Visibility</div><div class="srv-tab-s" data-en="Rank #1 on Google in your market" data-es="Posición #1 en Google">Rank #1 on Google in your market</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+        <div class="srv-tab" data-srv="2" onclick="srvClick(this,2)">
+          <div class="srv-tab-ico" style="background:rgba(236,72,153,.1)">📣</div>
+          <div><div class="srv-tab-t" data-en="Paid Advertising" data-es="Publicidad de Pago">Paid Advertising</div><div class="srv-tab-s" data-en="Meta · Google · TikTok · LinkedIn" data-es="Meta · Google · TikTok · LinkedIn">Meta · Google · TikTok · LinkedIn</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+        <div class="srv-tab" data-srv="3" onclick="srvClick(this,3)">
+          <div class="srv-tab-ico" style="background:rgba(16,185,129,.1)">📱</div>
+          <div><div class="srv-tab-t" data-en="Social Media" data-es="Redes Sociales">Social Media</div><div class="srv-tab-s" data-en="Content · Strategy · Community" data-es="Contenido · Estrategia · Comunidad">Content · Strategy · Community</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+        <div class="srv-tab" data-srv="4" onclick="srvClick(this,4)">
+          <div class="srv-tab-ico" style="background:rgba(245,158,11,.1)">🎨</div>
+          <div><div class="srv-tab-t" data-en="Content Creation" data-es="Creación de Contenido">Content Creation</div><div class="srv-tab-s" data-en="Visuals · Copy · Video · Branding" data-es="Visuales · Textos · Video">Visuals · Copy · Video · Branding</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+        <div class="srv-tab" data-srv="5" onclick="srvClick(this,5)">
+          <div class="srv-tab-ico" style="background:rgba(139,92,246,.1)">📊</div>
+          <div><div class="srv-tab-t" data-en="Analytics & Strategy" data-es="Analítica y Estrategia">Analytics & Strategy</div><div class="srv-tab-s" data-en="Data-driven decisions that grow brands" data-es="Decisiones basadas en datos">Data-driven decisions that grow brands</div></div>
+          <div class="srv-tab-arr">→</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Content panel -->
+      <div style="position:sticky;top:90px">
+        <div id="srv-panel" style="background:#fff;border:1.5px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(79,70,229,.08);transition:.35s">
+
+          <!-- Panel header -->
+          <div id="srv-header" style="padding:28px 28px 0">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+              <div id="srv-icon" style="width:52px;height:52px;border-radius:14px;background:rgba(79,70,229,.1);display:flex;align-items:center;justify-content:center;font-size:24px;transition:.3s">📧</div>
+              <div>
+                <div id="srv-title" style="font-size:18px;font-weight:800;color:var(--dark);transition:.3s">Email Marketing</div>
+                <div id="srv-sub" style="font-size:12px;color:var(--text2);margin-top:2px">Automated campaigns that convert</div>
+              </div>
+            </div>
+            <!-- Progress bar -->
+            <div style="height:3px;background:var(--bg2);border-radius:2px;overflow:hidden;margin-bottom:24px">
+              <div id="srv-bar" style="height:100%;border-radius:2px;background:linear-gradient(90deg,var(--p),var(--cyan));transition:width .6s cubic-bezier(.34,1.56,.64,1)" ></div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div id="srv-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
+            <div style="background:#fff;padding:18px 16px;text-align:center">
+              <div id="ss1" style="font-size:26px;font-weight:800;color:var(--p);line-height:1">+340%</div>
+              <div id="sl1" style="font-size:10px;color:var(--text2);margin-top:4px;font-weight:600">Open Rate</div>
+            </div>
+            <div style="background:#fff;padding:18px 16px;text-align:center;border-left:1px solid var(--border);border-right:1px solid var(--border)">
+              <div id="ss2" style="font-size:26px;font-weight:800;color:var(--cyan);line-height:1">2.4x</div>
+              <div id="sl2" style="font-size:10px;color:var(--text2);margin-top:4px;font-weight:600">Click Rate</div>
+            </div>
+            <div style="background:#fff;padding:18px 16px;text-align:center">
+              <div id="ss3" style="font-size:26px;font-weight:800;color:var(--green);line-height:1">+487%</div>
+              <div id="sl3" style="font-size:10px;color:var(--text2);margin-top:4px;font-weight:600">Revenue</div>
+            </div>
+          </div>
+
+          <!-- Description + features -->
+          <div style="padding:22px 28px 28px">
+            <p id="srv-desc" style="font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:18px">Strategic email sequences that nurture leads, recover abandoned carts, and re-engage cold audiences — all automated and personalized at scale.</p>
+            <div id="srv-feats" style="display:flex;flex-direction:column;gap:9px">
+              <div class="sf"><span class="sf-dot" style="background:var(--p)"></span><span>Automated welcome & nurture sequences</span></div>
+              <div class="sf"><span class="sf-dot" style="background:var(--p)"></span><span>A/B testing subject lines & content</span></div>
+              <div class="sf"><span class="sf-dot" style="background:var(--p)"></span><span>Segmentation by behavior & interest</span></div>
+              <div class="sf"><span class="sf-dot" style="background:var(--p)"></span><span>Monthly performance report included</span></div>
+            </div>
+            <button class="bp" onclick="openM()" style="margin-top:22px;width:100%;justify-content:center" data-en="Start This Service →" data-es="Iniciar Este Servicio →">Start This Service →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .srv-tab{
+    display:flex;align-items:center;gap:12px;
+    padding:14px 16px;background:#fff;
+    border:1.5px solid var(--border);border-radius:14px;
+    cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1);
+    box-shadow:0 2px 8px rgba(79,70,229,.03);
+  }
+  .srv-tab:hover{border-color:rgba(79,70,229,.2);transform:translateX(4px)}
+  .srv-tab.active{border-color:var(--p);background:rgba(79,70,229,.03);box-shadow:0 4px 20px rgba(79,70,229,.1);transform:translateX(6px)}
+  .srv-tab.active .srv-tab-arr{color:var(--p);transform:translateX(4px)}
+  .srv-tab-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .srv-tab-t{font-size:13px;font-weight:700;color:var(--dark)}
+  .srv-tab-s{font-size:11px;color:var(--text2);margin-top:2px}
+  .srv-tab-arr{margin-left:auto;color:var(--text3);font-size:16px;transition:.25s;flex-shrink:0}
+  .sf{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--text2)}
+  .sf-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+  @media(max-width:768px){
+    .srv-int-grid{grid-template-columns:1fr !important}
+    [style*="position:sticky"]{position:relative !important;top:auto !important}
+  }
+  </style>
+
+  <script>
+  const srvData=[
+    {
+      icon:'📧',title:'Email Marketing',sub:'Automated campaigns that convert',
+      color:'var(--p)',bar:'85',
+      s1:'+340%',l1:'Open Rate',s2:'2.4x',l2:'Click Rate',s3:'+487%',l3:'Revenue',
+      desc:'Strategic email sequences that nurture leads, recover abandoned carts, and re-engage cold audiences — all automated and personalized at scale.',
+      feats:['Automated welcome & nurture sequences','A/B testing subject lines & content','Segmentation by behavior & interest','Monthly performance report included'],
+      bg:'rgba(79,70,229,.1)'
+    },
+    {
+      icon:'🔍',title:'SEO & Visibility',sub:'Rank #1 on Google in your market',
+      color:'var(--cyan)',bar:'78',
+      s1:'#1',l1:'Google Rank',s2:'+312%',l2:'Organic Traffic',s3:'6mo',l3:'Avg. Timeline',
+      desc:'Full on-page & off-page SEO strategy — keyword research, technical audits, link building, and multilingual content that dominates search results.',
+      feats:['Keyword research in 6 languages','Technical SEO audit & fixes','High-authority backlink building','Monthly ranking & traffic reports'],
+      bg:'rgba(6,182,212,.1)'
+    },
+    {
+      icon:'📣',title:'Paid Advertising',sub:'Meta · Google · TikTok · LinkedIn',
+      color:'var(--pink)',bar:'92',
+      s1:'+580%',l1:'Avg. ROI',s2:'3.2x',l2:'ROAS',s3:'-40%',l3:'Cost Per Lead',
+      desc:'High-converting ad campaigns with laser-targeted audiences, creative testing, and continuous optimization — across every major paid platform.',
+      feats:['Multi-platform campaign management','Creative A/B testing & iteration','Audience research & retargeting','Weekly spend & performance review'],
+      bg:'rgba(236,72,153,.1)'
+    },
+    {
+      icon:'📱',title:'Social Media',sub:'Content · Strategy · Community',
+      color:'var(--green)',bar:'70',
+      s1:'+240%',l1:'Engagement',s2:'22/mo',l2:'Publications',s3:'+180%',l3:'Followers',
+      desc:'Complete social media management — from strategy and content calendar to daily posting, community management, and growth analytics.',
+      feats:['Monthly content calendar & strategy','Daily posting & community replies','Branded visual templates & copy','Bi-weekly performance analytics'],
+      bg:'rgba(16,185,129,.1)'
+    },
+    {
+      icon:'🎨',title:'Content Creation',sub:'Visuals · Copy · Video · Branding',
+      color:'#f59e0b',bar:'65',
+      s1:'15+',l1:'Assets/month',s2:'3',l2:'Ad Formats',s3:'100%',l3:'Original',
+      desc:'Professional visual production and strategic copywriting — from social media graphics to video ads and full brand identity packages.',
+      feats:['Custom branded visual design','Professional copywriting in 6 langs','Short-form video & reels production','Brand identity & guidelines'],
+      bg:'rgba(245,158,11,.1)'
+    },
+    {
+      icon:'📊',title:'Analytics & Strategy',sub:'Data-driven decisions that grow brands',
+      color:'var(--purple, #8b5cf6)',bar:'88',
+      s1:'KPI',l1:'Full Tracking',s2:'4.9★',l2:'Client Rating',s3:'24h',l3:'Report Delivery',
+      desc:'Deep performance tracking across every channel — with custom dashboards, monthly strategy calls, and actionable recommendations.',
+      feats:['Custom analytics dashboard setup','Monthly strategy & review call','Cross-channel attribution tracking','Competitive benchmarking reports'],
+      bg:'rgba(139,92,246,.1)'
+    }
+  ];
+
+  function srvClick(el,idx){
+    document.querySelectorAll('.srv-tab').forEach(t=>t.classList.remove('active'));
+    el.classList.add('active');
+    const d=srvData[idx];
+    const panel=document.getElementById('srv-panel');
+    panel.style.opacity='0';panel.style.transform='translateY(8px)';
+    setTimeout(()=>{
+      document.getElementById('srv-icon').textContent=d.icon;
+      document.getElementById('srv-icon').style.background=d.bg;
+      document.getElementById('srv-title').textContent=d.title;
+      document.getElementById('srv-sub').textContent=d.sub;
+      document.getElementById('srv-bar').style.width=d.bar+'%';
+      document.getElementById('ss1').textContent=d.s1;
+      document.getElementById('sl1').textContent=d.l1;
+      document.getElementById('ss2').textContent=d.s2;
+      document.getElementById('sl2').textContent=d.l2;
+      document.getElementById('ss3').textContent=d.s3;
+      document.getElementById('sl3').textContent=d.l3;
+      document.getElementById('srv-desc').textContent=d.desc;
+      document.getElementById('srv-feats').innerHTML=d.feats.map(f=>`<div class="sf"><span class="sf-dot" style="background:${d.color}"></span><span>${f}</span></div>`).join('');
+      panel.style.opacity='1';panel.style.transform='translateY(0)';
+    },200);
+  }
+  // Init bar
+  document.getElementById('srv-bar').style.width='85%';
+  </script>
+</section>
 <!-- FAQ -->
 <section class="sec" id="faq" style="background:linear-gradient(160deg,#f8fafc 0%,#eef2ff 50%,#f8fafc 100%);position:relative;overflow:hidden">
   <!-- Background decoration -->
