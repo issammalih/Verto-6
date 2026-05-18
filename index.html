@@ -990,23 +990,141 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 </section>
 
 <!-- INDUSTRIES -->
-<section class="sec bg" id="industries">
+<section class="sec" id="industries">
   <div class="ct">
     <div class="sh c rv">
       <span class="stag" data-en="Industries" data-es="Industrias">Industries</span>
       <h2 data-en="We speak <em>every industry</em>" data-es="Hablamos <em>cada industria</em>">We speak <em>every industry</em></h2>
     </div>
-    <div class="ig">
-      <div class="ic rv d1"><span class="iico">💄</span><h4 data-en="Beauty" data-es="Belleza">Beauty</h4><p data-en="Cosmetics, skincare, fragrances" data-es="Cosméticos, cuidado de piel">Cosmetics, skincare, fragrances</p></div>
-      <div class="ic rv d2"><span class="iico">🧘</span><h4 data-en="Wellness" data-es="Bienestar">Wellness</h4><p data-en="Spa, yoga, holistic health" data-es="Spa, yoga, salud holística">Spa, yoga, holistic health</p></div>
-      <div class="ic rv d3"><span class="iico">🏨</span><h4 data-en="Hospitality" data-es="Hostelería">Hospitality</h4><p data-en="Hotels, resorts, riads" data-es="Hoteles, resorts, riads">Hotels, resorts, riads</p></div>
-      <div class="ic rv d4"><span class="iico">👗</span><h4 data-en="Fashion" data-es="Moda">Fashion</h4><p data-en="Clothing, accessories" data-es="Ropa, accesorios">Clothing, accessories</p></div>
-      <div class="ic rv d5"><span class="iico">🍽️</span><h4 data-en="Food & Drink" data-es="Comida y Bebida">Food & Drink</h4><p data-en="Restaurants, cafés, F&B" data-es="Restaurantes, cafés">Restaurants, cafés, F&B</p></div>
-      <div class="ic rv d6"><span class="iico">✨</span><h4 data-en="Lifestyle" data-es="Lifestyle">Lifestyle</h4><p data-en="Premium lifestyle brands" data-es="Marcas premium">Premium lifestyle brands</p></div>
-      <div class="ic rv d7"><span class="iico">🏢</span><h4 data-en="Real Estate" data-es="Bienes Raíces">Real Estate</h4><p data-en="Property, luxury homes" data-es="Propiedades, casas de lujo">Property, luxury homes</p></div>
-      <div class="ic rv d8"><span class="iico">🛒</span><h4 data-en="E-commerce" data-es="E-commerce">E-commerce</h4><p data-en="Online shops, D2C brands" data-es="Tiendas online, D2C">Online shops, D2C brands</p></div>
+    <div class="ind-grid-new">
+      <div class="ind-new rv d1" onclick="openM()">
+        <div class="ind-new-ico">💄</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Beauty" data-es="Belleza">Beauty</h4>
+        <p data-en="Cosmetics, skincare, fragrances" data-es="Cosméticos, cuidado de piel">Cosmetics, skincare, fragrances</p>
+        <div class="ind-new-tag">+125% avg growth</div>
+      </div>
+      <div class="ind-new rv d2" onclick="openM()">
+        <div class="ind-new-ico">🧘</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Wellness" data-es="Bienestar">Wellness</h4>
+        <p data-en="Spa, yoga, holistic health" data-es="Spa, yoga, salud holística">Spa, yoga, holistic health</p>
+        <div class="ind-new-tag">+98% avg growth</div>
+      </div>
+      <div class="ind-new rv d3" onclick="openM()">
+        <div class="ind-new-ico">🏨</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Hospitality" data-es="Hostelería">Hospitality</h4>
+        <p data-en="Hotels, resorts, riads" data-es="Hoteles, resorts, riads">Hotels, resorts, riads</p>
+        <div class="ind-new-tag">+142% avg growth</div>
+      </div>
+      <div class="ind-new rv d4" onclick="openM()">
+        <div class="ind-new-ico">👗</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Fashion" data-es="Moda">Fashion</h4>
+        <p data-en="Clothing, accessories" data-es="Ropa, accesorios">Clothing, accessories</p>
+        <div class="ind-new-tag">+110% avg growth</div>
+      </div>
+      <div class="ind-new rv d5" onclick="openM()">
+        <div class="ind-new-ico">🍽️</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Food & Drink" data-es="Comida y Bebida">Food & Drink</h4>
+        <p data-en="Restaurants, cafés, F&B" data-es="Restaurantes, cafés">Restaurants, cafés, F&B</p>
+        <div class="ind-new-tag">+89% avg growth</div>
+      </div>
+      <div class="ind-new rv d6" onclick="openM()">
+        <div class="ind-new-ico">✨</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Lifestyle" data-es="Lifestyle">Lifestyle</h4>
+        <p data-en="Premium lifestyle brands" data-es="Marcas premium">Premium lifestyle brands</p>
+        <div class="ind-new-tag">+133% avg growth</div>
+      </div>
+      <div class="ind-new rv d7" onclick="openM()">
+        <div class="ind-new-ico">🏢</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="Real Estate" data-es="Bienes Raíces">Real Estate</h4>
+        <p data-en="Property, luxury homes" data-es="Propiedades, casas de lujo">Property, luxury homes</p>
+        <div class="ind-new-tag">+156% avg growth</div>
+      </div>
+      <div class="ind-new rv d8" onclick="openM()">
+        <div class="ind-new-ico">🛒</div>
+        <div class="ind-new-line"></div>
+        <h4 data-en="E-commerce" data-es="E-commerce">E-commerce</h4>
+        <p data-en="Online shops, D2C brands" data-es="Tiendas online, D2C">Online shops, D2C brands</p>
+        <div class="ind-new-tag">+178% avg growth</div>
+      </div>
     </div>
   </div>
+  <style>
+  .ind-grid-new{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .ind-new{
+    background:var(--w);
+    border:1.5px solid var(--border);
+    border-radius:20px;
+    padding:32px 20px 24px;
+    text-align:center;
+    cursor:pointer;
+    transition:all .35s cubic-bezier(.34,1.56,.64,1);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(79,70,229,.04);
+  }
+  .ind-new:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:rgba(79,70,229,.3);
+    box-shadow:0 16px 40px rgba(79,70,229,.12);
+  }
+  .ind-new:hover .ind-new-line{transform:scaleX(1)}
+  .ind-new:hover .ind-new-tag{opacity:1;transform:translateY(0)}
+  .ind-new-ico{
+    font-size:36px;
+    display:block;
+    margin-bottom:16px;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  .ind-new:hover .ind-new-ico{transform:scale(1.2) rotate(-5deg)}
+  .ind-new-line{
+    width:32px;height:2px;
+    background:linear-gradient(90deg,var(--p),var(--cyan));
+    border-radius:2px;
+    margin:0 auto 12px;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.35s;
+  }
+  .ind-new h4{
+    font-size:15px;font-weight:700;
+    color:var(--dark);margin-bottom:5px;
+  }
+  .ind-new p{
+    font-size:12px;color:var(--text2);line-height:1.5;
+  }
+  .ind-new-tag{
+    display:inline-block;
+    margin-top:12px;
+    padding:4px 12px;
+    background:rgba(79,70,229,.08);
+    border-radius:100px;
+    font-size:10px;font-weight:700;
+    color:var(--p);
+    opacity:0;
+    transform:translateY(6px);
+    transition:.3s;
+  }
+  @media(max-width:768px){
+    .ind-grid-new{grid-template-columns:repeat(2,1fr);gap:12px}
+    .ind-new{padding:24px 14px 18px}
+    .ind-new-ico{font-size:28px}
+    .ind-new-tag{opacity:1;transform:none}
+  }
+  @media(max-width:380px){
+    .ind-grid-new{grid-template-columns:repeat(2,1fr)}
+  }
+  </style>
 </section>
 
 <!-- FAQ -->
