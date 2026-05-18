@@ -662,7 +662,223 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
 })();
 </script>
 </section>
+<!-- GLOBAL REACH -->
+<section class="sec bg" id="global" style="overflow:hidden;position:relative">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(79,70,229,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(79,70,229,.03) 1px,transparent 1px);background-size:52px 52px;pointer-events:none"></div>
+  <div class="ct" style="position:relative;z-index:1">
+    <div class="sh c rv">
+      <span class="stag" data-en="Global Reach" data-es="Alcance Global">Global Reach</span>
+      <h2 data-en="Campaigns running <em>worldwide</em>" data-es="Campañas activas <em>en todo el mundo</em>">Campaigns running <em>worldwide</em></h2>
+      <p data-en="Real-time campaigns across Europe, Americas, Africa & Middle East — in 6 languages." data-es="Campañas en tiempo real en Europa, Américas, África y Oriente Medio — en 6 idiomas.">Real-time campaigns across Europe, Americas, Africa & Middle East — in 6 languages.</p>
+    </div>
 
+    <!-- Map container -->
+    <div class="rv" style="position:relative;border-radius:24px;overflow:hidden;background:#fff;border:1.5px solid var(--border);box-shadow:0 8px 40px rgba(79,70,229,.08)">
+      <canvas id="world-map-cv" style="width:100%;display:block;height:420px"></canvas>
+
+      <!-- Live badges -->
+      <div style="position:absolute;top:20px;left:20px;display:flex;flex-direction:column;gap:8px">
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(79,70,229,.08);animation:afl1 4s ease-in-out infinite">
+          <div style="width:7px;height:7px;border-radius:50%;background:#10b981;animation:ldot 1.5s infinite"></div>
+          <span style="font-size:11px;font-weight:700;color:var(--dark)" data-en="Live Campaigns" data-es="Campañas Activas">Live Campaigns</span>
+          <span style="font-size:11px;font-weight:800;color:var(--p)" id="live-count">24</span>
+        </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(79,70,229,.08);animation:afl2 5s ease-in-out infinite">
+          <span style="font-size:14px">🌍</span>
+          <span style="font-size:11px;font-weight:700;color:var(--dark)" data-en="Countries Reached" data-es="Países Alcanzados">Countries Reached</span>
+          <span style="font-size:11px;font-weight:800;color:var(--cyan)">32+</span>
+        </div>
+      </div>
+
+      <!-- Floating notifications -->
+      <div id="notif-container" style="position:absolute;bottom:20px;right:20px;display:flex;flex-direction:column;gap:8px;align-items:flex-end"></div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="rv" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px">
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 10px rgba(79,70,229,.04)">
+        <div style="font-size:24px;font-weight:800;color:var(--p)">🇪🇸🇫🇷🇩🇪</div>
+        <div style="font-size:12px;font-weight:700;color:var(--dark);margin-top:6px" data-en="Europe" data-es="Europa">Europe</div>
+        <div style="font-size:11px;color:var(--text2)" data-en="12 active campaigns" data-es="12 campañas activas">12 active campaigns</div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 10px rgba(79,70,229,.04)">
+        <div style="font-size:24px;font-weight:800;color:var(--cyan)">🇲🇦🇸🇦🇦🇪</div>
+        <div style="font-size:12px;font-weight:700;color:var(--dark);margin-top:6px" data-en="MENA" data-es="MENA">MENA</div>
+        <div style="font-size:11px;color:var(--text2)" data-en="8 active campaigns" data-es="8 campañas activas">8 active campaigns</div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 10px rgba(79,70,229,.04)">
+        <div style="font-size:24px;font-weight:800;color:var(--green)">🇺🇸🇨🇦🇲🇽</div>
+        <div style="font-size:12px;font-weight:700;color:var(--dark);margin-top:6px" data-en="Americas" data-es="Américas">Americas</div>
+        <div style="font-size:11px;color:var(--text2)" data-en="6 active campaigns" data-es="6 campañas activas">6 active campaigns</div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 10px rgba(79,70,229,.04)">
+        <div style="font-size:24px;font-weight:800;color:var(--pink)">🇬🇧🇮🇹🇵🇹</div>
+        <div style="font-size:12px;font-weight:700;color:var(--dark);margin-top:6px" data-en="Rest of World" data-es="Resto del Mundo">Rest of World</div>
+        <div style="font-size:11px;color:var(--text2)" data-en="4 active campaigns" data-es="4 campañas activas">4 active campaigns</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const cv=document.getElementById('world-map-cv');
+    if(!cv)return;
+    const cx=cv.getContext('2d');
+    let W,H,t=0;
+
+    function rz(){
+      W=cv.width=cv.offsetWidth*window.devicePixelRatio;
+      H=cv.height=cv.offsetHeight*window.devicePixelRatio;
+      cv.style.width=cv.offsetWidth+'px';
+      cv.style.height=cv.offsetHeight+'px';
+      cx.scale(window.devicePixelRatio,window.devicePixelRatio);
+    }
+    rz();
+    window.addEventListener('resize',rz);
+
+    // City coords [x%, y%]
+    const cities=[
+      {name:'London',x:47,y:22,region:'Europe',color:'#4f46e5'},
+      {name:'Paris',x:48,y:24,region:'Europe',color:'#4f46e5'},
+      {name:'Madrid',x:46,y:28,region:'Europe',color:'#4f46e5'},
+      {name:'Berlin',x:50,y:21,region:'Europe',color:'#4f46e5'},
+      {name:'Milan',x:50,y:25,region:'Europe',color:'#4f46e5'},
+      {name:'Casablanca',x:45,y:32,region:'MENA',color:'#06b6d4'},
+      {name:'Dubai',x:60,y:33,region:'MENA',color:'#06b6d4'},
+      {name:'Riyadh',x:59,y:35,region:'MENA',color:'#06b6d4'},
+      {name:'New York',x:28,y:25,region:'Americas',color:'#10b981'},
+      {name:'Miami',x:27,y:31,region:'Americas',color:'#10b981'},
+      {name:'Toronto',x:27,y:22,region:'Americas',color:'#10b981'},
+      {name:'Mexico',x:22,y:33,region:'Americas',color:'#10b981'},
+      {name:'São Paulo',x:32,y:52,region:'Americas',color:'#ec4899'},
+      {name:'Amsterdam',x:49,y:20,region:'Europe',color:'#4f46e5'},
+      {name:'Lisbon',x:44,y:27,region:'Europe',color:'#4f46e5'},
+    ];
+
+    // Active connections
+    const connections=[
+      [0,5],[1,5],[2,5],[3,5],[4,5],
+      [5,6],[5,7],[0,8],[1,9],[8,9],
+      [8,10],[10,11],[5,8],[6,7],[0,13],
+    ];
+
+    const particles=[];
+    connections.forEach(([a,b])=>{
+      particles.push({from:a,to:b,progress:Math.random(),speed:0.003+Math.random()*0.004,color:cities[a].color});
+    });
+
+    function drawGlobe(){
+      const w=W/window.devicePixelRatio,h=H/window.devicePixelRatio;
+
+      // Background
+      cx.fillStyle='#ffffff';
+      cx.fillRect(0,0,w,h);
+
+      // Subtle gradient
+      const grad=cx.createRadialGradient(w/2,h/2,0,w/2,h/2,w*.6);
+      grad.addColorStop(0,'rgba(238,242,255,.8)');
+      grad.addColorStop(1,'rgba(255,255,255,0)');
+      cx.fillStyle=grad;cx.fillRect(0,0,w,h);
+
+      // Grid lines (latitude/longitude feel)
+      cx.strokeStyle='rgba(79,70,229,.05)';
+      cx.lineWidth=.8;
+      for(let i=0;i<=10;i++){
+        cx.beginPath();cx.moveTo(0,h*i/10);cx.lineTo(w,h*i/10);cx.stroke();
+        cx.beginPath();cx.moveTo(w*i/10,0);cx.lineTo(w*i/10,h);cx.stroke();
+      }
+
+      // Draw connections
+      connections.forEach(([a,b],idx)=>{
+        const ax=cities[a].x*w/100,ay=cities[a].y*h/100;
+        const bx=cities[b].x*w/100,by=cities[b].y*h/100;
+        const mx=(ax+bx)/2,my=(ay+by)/2-30;
+        cx.beginPath();
+        cx.moveTo(ax,ay);
+        cx.quadraticCurveTo(mx,my,bx,by);
+        cx.strokeStyle=`rgba(79,70,229,.08)`;
+        cx.lineWidth=1;cx.stroke();
+      });
+
+      // Draw particles on connections
+      particles.forEach(p=>{
+        p.progress+=p.speed;
+        if(p.progress>1)p.progress=0;
+        const a=cities[p.from],b=cities[p.to];
+        const ax=a.x*w/100,ay=a.y*h/100;
+        const bx=b.x*w/100,by=b.y*h/100;
+        const mx=(ax+bx)/2,my=(ay+by)/2-30;
+        const t2=p.progress;
+        const px=Math.pow(1-t2,2)*ax+2*(1-t2)*t2*mx+Math.pow(t2,2)*bx;
+        const py=Math.pow(1-t2,2)*ay+2*(1-t2)*t2*my+Math.pow(t2,2)*by;
+
+        // Trail
+        for(let i=1;i<=5;i++){
+          const t3=Math.max(0,t2-i*.02);
+          const px2=Math.pow(1-t3,2)*ax+2*(1-t3)*t3*mx+Math.pow(t3,2)*bx;
+          const py2=Math.pow(1-t3,2)*ay+2*(1-t3)*t3*my+Math.pow(t3,2)*by;
+          cx.beginPath();cx.arc(px2,py2,2*(1-i/5),0,Math.PI*2);
+          cx.fillStyle=p.color.replace(')',`,${.15*(1-i/5)})`).replace('rgb','rgba').replace('#','');
+          const r=parseInt(p.color.slice(1,3),16),g=parseInt(p.color.slice(3,5),16),bl=parseInt(p.color.slice(5,7),16);
+          cx.fillStyle=`rgba(${r},${g},${bl},${.2*(1-i/5)})`;
+          cx.fill();
+        }
+        // Main dot
+        cx.beginPath();cx.arc(px,py,3,0,Math.PI*2);
+        const r=parseInt(p.color.slice(1,3),16),g=parseInt(p.color.slice(3,5),16),bl=parseInt(p.color.slice(5,7),16);
+        cx.fillStyle=`rgba(${r},${g},${bl},1)`;cx.fill();
+      });
+
+      // Draw cities
+      cities.forEach((c,i)=>{
+        const x=c.x*w/100,y=c.y*h/100;
+        const pulse=1+Math.sin(t*2+i)*.3;
+        const r=parseInt(c.color.slice(1,3),16),g=parseInt(c.color.slice(3,5),16),bl=parseInt(c.color.slice(5,7),16);
+
+        // Pulse ring
+        cx.beginPath();cx.arc(x,y,8*pulse,0,Math.PI*2);
+        cx.fillStyle=`rgba(${r},${g},${bl},.08)`;cx.fill();
+
+        // Outer ring
+        cx.beginPath();cx.arc(x,y,5,0,Math.PI*2);
+        cx.fillStyle=`rgba(${r},${g},${bl},.2)`;cx.fill();
+
+        // Core
+        cx.beginPath();cx.arc(x,y,3,0,Math.PI*2);
+        cx.fillStyle=c.color;cx.fill();
+      });
+
+      t+=.015;
+      requestAnimationFrame(drawGlobe);
+    }
+    drawGlobe();
+
+    // Floating notifications
+    const notifs=[
+      {flag:'🇫🇷',city:'Paris',type:'Beauty Brand',roi:'+312%',color:'#4f46e5'},
+      {flag:'🇬🇧',city:'London',type:'Luxury Hotel',roi:'+240%',color:'#06b6d4'},
+      {flag:'🇺🇸',city:'New York',type:'Fashion E-shop',roi:'+487%',color:'#10b981'},
+      {flag:'🇦🇪',city:'Dubai',type:'Wellness Brand',roi:'+198%',color:'#ec4899'},
+      {flag:'🇪🇸',city:'Madrid',type:'Real Estate',roi:'+155%',color:'#f59e0b'},
+    ];
+    let ni=0;
+    const cont=document.getElementById('notif-container');
+    function showNotif(){
+      if(!cont)return;
+      const n=notifs[ni%notifs.length];ni++;
+      const d=document.createElement('div');
+      d.style.cssText=`background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(79,70,229,.1);min-width:220px;transform:translateX(20px);opacity:0;transition:.4s cubic-bezier(.34,1.56,.64,1);border-left:3px solid ${n.color}`;
+      d.innerHTML=`<span style="font-size:18px">${n.flag}</span><div><div style="font-size:11px;font-weight:700;color:var(--dark)">${n.city} · ${n.type}</div><div style="font-size:10px;color:${n.color};font-weight:700">ROI ${n.roi} ↑</div></div><div style="margin-left:auto;width:7px;height:7px;border-radius:50%;background:#10b981"></div>`;
+      cont.appendChild(d);
+      setTimeout(()=>{d.style.transform='translateX(0)';d.style.opacity='1';},50);
+      setTimeout(()=>{d.style.opacity='0';d.style.transform='translateX(20px)';setTimeout(()=>d.remove(),400);},3500);
+      if(cont.children.length>3)cont.firstChild.remove();
+    }
+    showNotif();
+    setInterval(showNotif,2500);
+  })();
+  </script>
+</section>
 <!-- TRUSTED BY -->
 <div class="trusted">
   <div class="ct">
