@@ -825,7 +825,253 @@ footer{border-top:1px solid var(--border);padding:56px 0 24px;background:var(--w
     </div>
   </div>
 </section>
+<!-- AI CHATBOT VIDEO SECTION -->
+<section class="sec" id="ai-section" style="background:var(--dark);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 30% 50%,rgba(79,70,229,.12),transparent 55%),radial-gradient(circle at 75% 30%,rgba(6,182,212,.08),transparent 50%);pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
 
+  <div class="ct" style="position:relative;z-index:1">
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center" class="ai-vid-layout">
+
+      <!-- LEFT: Text -->
+      <div class="rvl">
+        <span class="stag" style="color:var(--p3)" data-en="AI Assistant" data-es="Asistente IA">AI Assistant</span>
+        <h2 style="font-size:clamp(28px,3.5vw,46px);font-weight:800;letter-spacing:-.025em;color:#fff;line-height:1.12;margin-bottom:16px" data-en="Your brand,<br><em style='font-style:normal;color:var(--p3)'>always online.</em>" data-es="Tu marca,<br><em style='font-style:normal;color:var(--p3)'>siempre en línea.</em>">Your brand,<br><em style="font-style:normal;color:var(--p3)">always online.</em></h2>
+        <p style="color:rgba(255,255,255,.45);font-size:14px;line-height:1.75;margin-bottom:32px">We build intelligent AI chatbots that handle customer questions, qualify leads, and book appointments — 24/7, in 6 languages.</p>
+
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:rgba(79,70,229,.15);border:1px solid rgba(79,70,229,.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🌍</div>
+            <div><div style="font-size:13px;font-weight:700;color:#fff">Multilingual — 6 languages</div><div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:2px">EN · ES · FR · DE · IT · AR</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚡</div>
+            <div><div style="font-size:13px;font-weight:700;color:#fff">Instant responses 24/7</div><div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:2px">Never miss a lead again</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🎯</div>
+            <div><div style="font-size:13px;font-weight:700;color:#fff">Lead qualification & booking</div><div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:2px">Converts visitors into clients automatically</div></div>
+          </div>
+        </div>
+        <button class="bp" onclick="openM()" data-en="Get an AI Chatbot →" data-es="Obtener un Chatbot IA →">Get an AI Chatbot →</button>
+      </div>
+
+      <!-- RIGHT: Video mock -->
+      <div class="rvr">
+        <div class="ai-video-wrap" id="ai-video-wrap">
+
+          <!-- VIDEO THUMBNAIL STATE -->
+          <div class="ai-thumbnail" id="ai-thumbnail">
+            <!-- Fake screenshot of chat -->
+            <div class="ai-screenshot">
+              <div class="ai-ss-header">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#4f46e5,#818cf8);display:flex;align-items:center;justify-content:center;font-size:14px">🤖</div>
+                  <div>
+                    <div style="font-size:12px;font-weight:700;color:var(--dark)">Verto AI Assistant</div>
+                    <div style="font-size:10px;color:var(--green);display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block"></span>Online</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ai-ss-body">
+                <div class="ai-ss-msg bot">👋 Hello! I'm your AI assistant. How can I help you today?</div>
+                <div class="ai-ss-msg user">Hi! I want to grow my brand online.</div>
+                <div class="ai-ss-msg bot">Great! 🚀 We help brands in 6 languages. What's your industry?</div>
+                <div class="ai-ss-msg user">I run a luxury hotel in Spain.</div>
+                <div class="ai-ss-msg bot" style="opacity:.5">🏨 Perfect! We've helped hotels increase bookings by +240%...</div>
+              </div>
+            </div>
+            <!-- Overlay + play button -->
+            <div class="ai-overlay">
+              <button class="ai-play-btn" onclick="startAiChat()" aria-label="Play demo">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div style="font-size:13px;color:rgba(255,255,255,.7);font-weight:600;margin-top:14px">See it in action</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px">Click to watch live demo</div>
+            </div>
+            <!-- Duration badge -->
+            <div class="ai-duration">LIVE DEMO</div>
+          </div>
+
+          <!-- LIVE CHAT STATE (hidden by default) -->
+          <div class="ai-live" id="ai-live" style="display:none">
+            <div class="ai-live-header">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#4f46e5,#818cf8);display:flex;align-items:center;justify-content:center;font-size:16px">🤖</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--dark)">Verto AI Assistant</div>
+                  <div style="font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:ldot 1.5s infinite"></span>Online now</div>
+                </div>
+              </div>
+              <button onclick="resetAiChat()" style="background:none;border:none;cursor:pointer;color:var(--text2);font-size:18px;padding:4px;line-height:1">✕</button>
+            </div>
+            <div class="ai-live-msgs" id="ai-live-msgs"></div>
+            <div class="ai-live-input">
+              <div class="ai-live-fake" id="ai-live-typing"></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bar (visible during live) -->
+          <div class="ai-progress" id="ai-progress" style="display:none">
+            <div class="ai-progress-fill" id="ai-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Stats below video -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:center">
+            <div style="font-size:22px;font-weight:800;color:var(--p3);line-height:1">24/7</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:600">Available</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:center">
+            <div style="font-size:22px;font-weight:800;color:#67e8f9;line-height:1">&lt;1s</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:600">Response</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:center">
+            <div style="font-size:22px;font-weight:800;color:#6ee7b7;line-height:1">6</div>
+            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:600">Languages</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+  .ai-vid-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .ai-video-wrap{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 32px 80px rgba(0,0,0,.4);position:relative}
+  .ai-thumbnail{position:relative;cursor:pointer}
+  .ai-screenshot{background:var(--bg);padding:0}
+  .ai-ss-header{padding:14px 16px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center}
+  .ai-ss-body{padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .ai-ss-msg{max-width:75%;padding:9px 13px;border-radius:14px;font-size:12px;line-height:1.5}
+  .ai-ss-msg.bot{background:#fff;border:1px solid var(--border);color:var(--text);border-radius:14px 14px 14px 3px;align-self:flex-start}
+  .ai-ss-msg.user{background:var(--p);color:#fff;border-radius:14px 14px 3px 14px;align-self:flex-end}
+  .ai-overlay{position:absolute;inset:0;background:rgba(10,15,40,.65);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.3s}
+  .ai-thumbnail:hover .ai-overlay{background:rgba(10,15,40,.5)}
+  .ai-play-btn{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(79,70,229,.5);transition:.3s;padding-left:4px}
+  .ai-play-btn:hover{transform:scale(1.1);box-shadow:0 12px 36px rgba(79,70,229,.6)}
+  .ai-duration{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:.05em}
+  .ai-live{background:#fff}
+  .ai-live-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border);background:#fff}
+  .ai-live-msgs{padding:16px;display:flex;flex-direction:column;gap:10px;min-height:260px;max-height:260px;overflow-y:auto;background:var(--bg)}
+  .ai-live-msgs::-webkit-scrollbar{width:3px}
+  .ai-live-msgs::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+  .ai-bubble2{max-width:78%;padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.5;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+  .ai-bubble2.show{opacity:1;transform:none}
+  .ai-bubble2.bot2{background:#fff;border:1px solid var(--border);color:var(--text);border-radius:14px 14px 14px 3px;align-self:flex-start;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+  .ai-bubble2.user2{background:var(--p);color:#fff;border-radius:14px 14px 3px 14px;align-self:flex-end}
+  .ai-bubble2.typing2{background:#fff;border:1px solid var(--border);border-radius:14px 14px 14px 3px;align-self:flex-start;padding:12px 16px}
+  .ai-live-input{display:flex;align-items:center;gap:10px;padding:12px 14px;border-top:1px solid var(--border);background:#fff}
+  .ai-live-fake{flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:8px 14px;font-size:13px;color:var(--text2);min-height:34px;display:flex;align-items:center}
+  .ai-progress{height:3px;background:rgba(255,255,255,.08)}
+  .ai-progress-fill{height:100%;background:linear-gradient(90deg,var(--p),var(--cyan));width:0%;transition:width .3s linear}
+  @media(max-width:768px){.ai-vid-layout{grid-template-columns:1fr !important;gap:36px}}
+  </style>
+
+  <script>
+  var aiRunning=false;
+  var aiTimer=null;
+
+  var aiMsgs=[
+    {type:'bot',text:'👋 Hello! I\'m Verto AI Assistant. How can I help you today?'},
+    {type:'user',text:'Hi! I want to grow my brand online.'},
+    {type:'bot',text:'Great choice! 🚀 We specialize in digital marketing in 6 languages. What industry are you in?'},
+    {type:'user',text:'I run a luxury hotel in Spain.'},
+    {type:'bot',text:'Perfect! 🏨 We\'ve helped hotels increase bookings by +240% through SEO & content. Want to know how?'},
+    {type:'user',text:'Yes! That sounds amazing.'},
+    {type:'bot',text:'Wonderful! 📅 Let me connect you with our team for a free strategy call within 24h. Can I get your name?'},
+    {type:'user',text:'My name is Carlos.'},
+    {type:'bot',text:'Thank you Carlos! ✅ Our team will contact you at +212 691-396908 very soon. Welcome to Verto! 🎉'},
+  ];
+
+  function startAiChat(){
+    document.getElementById('ai-thumbnail').style.display='none';
+    document.getElementById('ai-live').style.display='flex';
+    document.getElementById('ai-live').style.flexDirection='column';
+    document.getElementById('ai-progress').style.display='block';
+    aiRunning=true;
+    var i=0;
+    var totalTime=18000;
+    var start=performance.now();
+
+    function updateProgress(){
+      if(!aiRunning)return;
+      var el=document.getElementById('ai-progress-fill');
+      if(el){var p=Math.min((performance.now()-start)/totalTime*100,100);el.style.width=p+'%';}
+      if(performance.now()-start<totalTime)requestAnimationFrame(updateProgress);
+    }
+    updateProgress();
+
+    function showMsg(idx){
+      if(!aiRunning||idx>=aiMsgs.length)return;
+      var m=aiMsgs[idx];
+      var container=document.getElementById('ai-live-msgs');
+      var typingInput=document.getElementById('ai-live-typing');
+      if(!container)return;
+
+      if(m.type==='bot'){
+        var typ=document.createElement('div');
+        typ.className='ai-bubble2 typing2 show';
+        typ.innerHTML='<div style="display:flex;gap:4px;align-items:center"><div style="width:6px;height:6px;border-radius:50%;background:var(--text3);animation:aidot .9s ease-in-out infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--text3);animation:aidot .9s .15s ease-in-out infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--text3);animation:aidot .9s .3s ease-in-out infinite"></div></div>';
+        container.appendChild(typ);
+        container.scrollTop=container.scrollHeight;
+        aiTimer=setTimeout(function(){
+          if(!aiRunning)return;
+          typ.remove();
+          var b=document.createElement('div');
+          b.className='ai-bubble2 bot2';
+          b.textContent=m.text;
+          container.appendChild(b);
+          requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show')})});
+          container.scrollTop=container.scrollHeight;
+          aiTimer=setTimeout(function(){showMsg(idx+1)},idx<aiMsgs.length-1?1400:3000);
+        },900);
+      } else {
+        var t=0;
+        if(typingInput)typingInput.textContent='';
+        var iv=setInterval(function(){
+          if(!aiRunning){clearInterval(iv);return}
+          if(typingInput)typingInput.textContent=m.text.slice(0,t+1);
+          t++;
+          if(t>=m.text.length){
+            clearInterval(iv);
+            aiTimer=setTimeout(function(){
+              if(!aiRunning)return;
+              if(typingInput)typingInput.textContent='';
+              var b=document.createElement('div');
+              b.className='ai-bubble2 user2';
+              b.textContent=m.text;
+              container.appendChild(b);
+              requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show')})});
+              container.scrollTop=container.scrollHeight;
+              aiTimer=setTimeout(function(){showMsg(idx+1)},800);
+            },300);
+          }
+        },38);
+      }
+    }
+    showMsg(0);
+  }
+
+  function resetAiChat(){
+    aiRunning=false;
+    if(aiTimer)clearTimeout(aiTimer);
+    var msgs=document.getElementById('ai-live-msgs');
+    var typ=document.getElementById('ai-live-typing');
+    if(msgs)msgs.innerHTML='';
+    if(typ)typ.textContent='';
+    var fill=document.getElementById('ai-progress-fill');
+    if(fill)fill.style.width='0%';
+    document.getElementById('ai-live').style.display='none';
+    document.getElementById('ai-progress').style.display='none';
+    document.getElementById('ai-thumbnail').style.display='block';
+  }
+  </script>
+</section>
 <!-- STATS -->
 <section class="sec" id="stats">
   <div class="ct">
